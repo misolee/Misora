@@ -4,8 +4,7 @@ class ProductShowDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      index: 0,
-      title: "Details"
+      index: 0
     };
 
     this.handleTabClick = this.handleTabClick.bind(this);
@@ -13,7 +12,7 @@ class ProductShowDetail extends React.Component {
   
   handleTabClick(e) {
     e.preventDefault();
-    this.setState({ index: Number(e.target.getAttribute("index")), title: Number(e.target.getAttribute("tabtitle")) });
+    this.setState({ index: Number(e.target.getAttribute("index")) });
   }
   
   render() {
@@ -36,10 +35,26 @@ class ProductShowDetail extends React.Component {
     ];
 
     let titles = tabsInfo.map((tab, i) => {
-      if (tab.title === this.state.title) {
-        return <div className="each-tab selected" key={i} index={i} tabtitle={ tab.title } onClick={ this.handleTabClick }>{ tab.title }</div>;
+      if (i === this.state.index) {
+        return (
+          <div className="each-tab-selected" key={i} index={i} onClick={ this.handleTabClick }>
+            <div className="selected-tab-title" key={i} index={i} onClick={ this.handleTabClick }>
+              { tab.title }
+            </div>
+            <div className="selected-tab">
+            </div>
+          </div>
+        );
       } else {
-        return <div className="each-tab" key={i} index={i} tabtitle={ tab.title } onClick={ this.handleTabClick }>{ tab.title }</div>;
+        return (
+          <div className="each-tab-unselected" key={i} index={i} onClick={ this.handleTabClick }>
+            <div className="unselected-tab-title" key={i} index={i} onClick={ this.handleTabClick }>
+              { tab.title }
+            </div>
+            <div className="unselected-tab">
+            </div>
+          </div>
+        );
       }
     });
 
@@ -57,7 +72,6 @@ class ProductShowDetail extends React.Component {
     )
   }
 }
-
 
 export default ProductShowDetail;
       // <div>
