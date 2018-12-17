@@ -1,0 +1,7 @@
+export const allMakeupProducts = (state) => 
+	Object.values(state.entities.products).filter((product) => 
+		product.category === "Lip" || 
+		product.category === "Eyeliner" || 
+		product.category === "Blush" ||
+		product.category === "Eye Palettes"
+	);

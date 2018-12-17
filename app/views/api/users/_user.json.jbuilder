@@ -1,0 +1,12 @@
+json.extract! user, 
+  :id,
+  :email,
+  :first_name,
+  :last_name,
+  :skin_tone,
+  :skin_type,
+  :hair_color,
+  :hair_type,
+  :eye_color,
+  :color_iq,
+  :birthday

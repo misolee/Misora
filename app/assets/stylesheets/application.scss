@@ -1,0 +1,45 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+ // reset file
+ @import './reset';
+
+ // header
+ @import './header/header';
+
+ // under_navbar
+ @import './header/under_navbar';
+
+ // signin modal
+ @import './header/signin_page';
+
+ // birthday dropdown
+ @import './header/birthday_dropdown';
+
+ // signup modal
+ @import './header/signup_page';
+ 
+  // splash
+ @import './main/splash';
+
+ // footer
+ @import './main/footer';
+
+ // all products index
+ @import './main/all_products_index';
+
+ // product show page
+ @import './main/product_show';
+

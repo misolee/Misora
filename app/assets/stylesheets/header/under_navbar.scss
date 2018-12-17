@@ -1,0 +1,46 @@
+@import '../variables';
+
+.under-nav-bar {
+  align-items: center;
+  min-width: 1000px;
+  height: 65px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.undernavbar-buttons {
+  display: flex;
+  justify-content: center;
+  min-width: 700px;
+  height: 35px;
+  margin: 0 auto;     
+  align-items: center;
+  position: relative;
+  z-index: 3;
+
+  .undernavbar-button {
+    background-color: white;
+    font-family: $Arimo;
+    letter-spacing: 0.5px;
+    color: gray;
+    font-size: 15px;
+    border: none;
+    margin: 5px 10px 5px 10px;
+  }
+  
+  a.undernavbar-button {
+    font-weight: bold;
+    min-width: 135px;
+    text-align: center;
+  }
+
+  a.undernavbar-button:hover {
+    text-decoration: underline;
+    color: $darkPink;
+  }
+}
+
+#bath-body {
+  position: relative;
+  z-index: 100;
+}

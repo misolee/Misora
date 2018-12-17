@@ -1,0 +1,23 @@
+.very-bottom {
+  height: 285px;
+  background-color: $pink;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  min-width: 1000px;
+}
+
+.footer-icons {
+  width: 70%;
+  min-width: 1000px;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0 auto;
+  
+  #footer-icon {
+    font-size: 50px;
+    color: white;
+    margin-left: 50px;
+  }
+}
+

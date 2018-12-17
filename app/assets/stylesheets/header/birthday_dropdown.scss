@@ -1,0 +1,31 @@
+@import '../variables';
+
+select {
+  $bg-color: white;
+  $text-color: $darkGray;
+  height: 38px;
+
+  background: {
+    color: $bg-color;
+    image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1255/caret--down-15.png");
+    position: right;
+    repeat: no-repeat;
+  }
+
+  border: {
+    color: mix($bg-color, $lightGray, 80%);
+    radius: .2em;
+    style: solid;
+    width: 1px;
+    right-color: mix($bg-color, $lightGray, 60%);
+    bottom-color: mix($bg-color, $lightGray, 60%);
+  }
+
+  color: $text-color;
+  padding: .33em .5em;
+  width: 100%;
+}
+
+select:focus {
+  border: 1px solid $darkGray;
+}

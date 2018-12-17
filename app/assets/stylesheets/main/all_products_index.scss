@@ -1,0 +1,90 @@
+.all-product-index-page {
+  display: flex;
+  width: 70%;
+  min-width: 1000px;
+  margin: 40px auto;
+  align-items: center;
+  font-family: $Arimo;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  color: $darkGray;
+}
+
+.all-product-index {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 4;
+  border-left: 1px solid $lightGray;
+}
+
+.all-index-product-info {
+  display: flex;
+  flex: 1;
+  text-align: center;
+  height: 275px;
+  flex-direction: column;
+  font-weight: bold;
+  padding: 0 15px;
+  margin-top: 15px;
+}
+
+.all-index-product-image {
+  display: flex;
+  flex: 1;
+  position: relative;
+
+  .all-index-one-product-image {
+    overflow: hidden;
+    width: 100%;
+    height: 140px;
+  }
+}
+
+.all-index-brand-name {
+  font-size: 14px;
+  margin-bottom: 3px;
+  margin-top: 10px;
+}
+
+.all-index-product-name {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.all-index-product-price {
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.all-product-left-navbar {
+  flex: 1;
+  border: 1px solid blue;
+  width: 200px;
+}
+
+.all-products-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  min-width: 795.59px;
+
+  .all-products-list-one-item {
+    width: 168px;
+    margin: 0 15px;
+  }
+}
+
+.product-count {
+  height: 30px;
+  border-bottom: 1px solid $lightGray;
+  border-top: 1px solid $lightGray;
+  padding-top: 15px;
+  color: $lightGray;
+  margin: 0 20px;
+}
+
+.link-to-show:hover {
+  text-decoration: underline;
+  color: $darkPink;
+}

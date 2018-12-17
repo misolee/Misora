@@ -1,0 +1,203 @@
+@import '../variables';
+
+.product-show-page {
+  display: flex;
+  flex-direction: column;
+  font-family: $Arimo;
+  letter-spacing: 0.5px;
+  color: gray;
+  min-width: 1000px;
+  width: 70%;
+  margin: 0 auto;
+  
+  .product-show-category {
+    font-weight: bold;
+    padding: 20px 0 20px 25px;
+    min-width: 1000px;
+  }
+}
+
+.product-show-main{
+  display: flex;
+  padding: 30px 0;
+  border-top: 1px solid $lightGray;
+
+  .product-show-image {
+    flex: 2;
+  }
+
+  .index-one-product-image {
+    width: 275px;
+    flex: 1;
+    margin-left: 30px;
+    margin-right: 60px;
+  }
+
+  .product-show-info {
+    display: flex;
+    flex: 2;
+    
+    .product-show-brand-name-size {
+      display: flex;
+      flex-direction: column;
+      flex: 2;
+      min-width: 220px;
+    
+      .product-show-brand {
+        font-weight: bold;
+        font-size: 20px;
+        padding-bottom: 10px;
+      }
+    
+      .product-show-name-size {
+        display: flex;
+        flex-direction: column;
+    
+        .product-show-size {
+          color: $lightGray;
+          font-size: 13px;
+          margin-top: 5px;
+        }
+      }
+    }
+
+    .product-show-price-free-shipping {
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+      margin: 0 15px;
+      
+      .product-show-price {
+        width: 110px;
+      }
+
+      .product-show-free-shipping {
+        font-size: 12px;
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .product-show-add-to-basket {
+    display: flex;
+    flex-direction: column;
+
+    #yes-i-want {
+      font-weight: normal;
+    }
+
+    .product-show-checkbox{
+      flex: 0.7;
+      padding-left: 10px;
+    }
+
+    #product-show-checkbox {
+      margin: 0;
+    }
+  }
+
+  .product-show-basket {
+    display: flex;
+    flex: 3;
+    
+    .number-of-quantity {
+      flex: 1;
+      padding: 0 10px;
+      width: 55px;
+    }
+    
+    .add-to-basket {
+      flex: 2;
+      padding: 0 30px 0 10px;
+      font-size: 15px;
+
+      #add-to-basket {
+        display: flex;
+        background-color: $darkPink;
+        color: white;
+        border-radius: 5px;
+        border: 1px solid $darkPink;
+        width: 160px;
+        height: 38px;
+        font-weight: bold;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+  
+      #add-to-basket:hover {
+        background-color: $pink;
+        border: 1px solid $pink;
+        cursor: pointer;
+      }
+
+      #add-to-loves {
+        display: flex;
+        background-color: white;
+        color: $darkPink;
+        border-radius: 5px;
+        border: 1px solid $darkPink;
+        width: 160px;
+        height: 38px;
+        font-weight: bold;
+        justify-content: center;
+        
+      }
+      
+      #add-to-loves:hover {
+        color: $pink;
+        border: 1px solid $pink;
+        cursor: pointer;
+      }
+
+      #heart-add-to-loves {
+        margin-right: 5px;
+      }
+
+      input.zip-code {
+        height: 35px;
+        border-radius: 5px;
+        color: gray;
+        width: 140px;
+      }
+      
+      input[type='text'].zip-code {
+        background-size: 28px 28px;
+        background-repeat: no-repeat;
+        background-position: 4px 4px;
+        font-size: 13px;
+        font-family: $Arimo;
+        letter-spacing: 0.5px;
+        border: 1px solid $lightGray;
+        padding: 0 10px;
+      }
+      
+      input[type='text'].zip-code::placeholder {
+        color: $lightGray;
+        text-align: center;
+      }
+      
+      input[type='text'].zip-code:focus {
+        border: 1px solid gray;
+        color: gray;
+      }
+
+      .product-show-find-in-store-zip-code {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        font-weight: bold;
+        font-size: 13px;
+
+        .find-in-store {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+

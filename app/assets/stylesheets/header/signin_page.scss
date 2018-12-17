@@ -1,0 +1,340 @@
+@import '../variables';
+
+.outsideSigninSignup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(219, 205, 205, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signinPage {
+  font-family: $Arimo;
+  letter-spacing: 0.5px;
+  background-color: white;
+  max-width: 470px;
+  flex: 1;
+  border-radius: 5px;
+  position: relative;
+  z-index: 1000;
+}
+
+.pleasesignin {
+  display: flex;
+  font-weight: bold;
+  color: gray;
+  align-items: center;
+  height: 48px;
+  padding-left: 30px;
+  border-radius: 5px;
+  border-bottom: 1px solid #eceaea;
+
+  .pleasesigninMessage {
+    flex: 9;
+  }
+
+  button.pleasesignin {
+    flex: 1;
+    cursor: pointer;
+    background-color: white;
+    font-family: $Arimo;
+  letter-spacing: 0.5px;
+    font-size: 23px;
+    border: none;
+  }
+
+  button.pleasesignin:hover {
+    color: $darkPink;
+  }
+}
+
+.email-div {
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+  justify-content: center;
+  padding-left: 30px;
+
+  .emailQ {
+    font-weight: bold;
+    font-size: 15px;
+    color: gray;
+    padding-bottom: 10px;
+  }
+
+  input.emailInput {
+    border: 1px solid $lightGray;
+    border-radius: 5px;
+    height: 36px;
+    width: 390px;
+  }
+
+  input[type='text'].emailInput {
+    padding-left: 17px;
+    font-size: 15px;
+    font-family: $Arimo;
+  letter-spacing: 0.5px;
+  }
+
+  input[type='text'].emailInput::placeholder {
+    color: $lightGray;
+  }
+
+  input[type='text'].emailInput:focus {
+    border: 1px solid gray;
+    color: gray;
+  }
+
+  .haveAccount {
+    color: $lightGray;
+    font-size: 11px;
+    padding-top: 10px;
+  }
+}
+
+.pw-div {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: center;
+  padding-left: 30px;
+  margin-top: -10px;
+
+  .pwquestion {
+    font-weight: bold;
+    font-size: 15px;
+    color: gray;
+    padding-bottom: 10px;
+  }
+
+  .pwField {
+    color: gray;
+    font-family: $Arimo;
+  letter-spacing: 0.5px;
+  }
+
+  .pwGroup {
+    display: inline-block;
+    vertical-align: top;
+    background: #fff;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+
+    .pw-radio {
+      flex: 1;
+    }
+
+    .control {
+      display: block;
+      position: relative;
+      padding-left: 30px;
+      cursor: pointer;
+      font-size: 15px;
+      padding-bottom: 10px;
+    }
+
+    .control input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .pw-indicator {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background: $pink;
+    }
+
+    .pw-radio .pw-indicator {
+      border-radius: 50%;
+    }
+
+    .control:hover input~.pw-indicator,
+    .control input:focus~.pw-indicator {
+      background: $darkPink;
+    }
+
+    .control input:checked~.pw-indicator {
+      background: $pink;
+    }
+
+    .control:hover input:not([disabled]):checked~.pw-indicator,
+    .control input:checked:focus~.pw-indicator {
+      background: $darkPink;
+    }
+
+    .control input:disabled~.pw-indicator {
+      background: #e6e6e6;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .pw-indicator:after {
+      content: '';
+      position: absolute;
+      display: none;
+    }
+
+    .control input:checked~.pw-indicator:after {
+      display: block;
+    }
+
+    .control--checkbox .pw-indicator:after {
+      left: 8px;
+      top: 4px;
+      width: 3px;
+      height: 8px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .pw-radio .pw-indicator:after {
+      left: 7px;
+      top: 7px;
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+  }
+}
+
+input[type="password"] {
+  padding-left: 17px;
+  font-size: 15px;
+  height: 36px;
+  width: 390px;
+  margin-left: 30px;
+  border-radius: 5px;
+  font-family: $Arimo;
+  letter-spacing: 0.5px;
+  border-radius: 5px;
+  border: 1px solid $lightGray;
+  margin-top: 7px;
+}
+
+input[type="password"]::placeholder {
+  color: $lightGray;
+}
+
+input[type="password"]:focus {
+  border: 1px solid gray;
+  color: gray;
+}
+
+.cancel-submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  padding-left: 75px;
+  text-align: center;
+  color: $darkPink;
+  font-weight: bold;
+  margin-top: -10px;
+  margin-bottom: -5px;
+
+  :hover {
+    cursor: pointer;
+  }
+
+  .cancel-button {
+    border-radius: 5px;
+    border: 1px solid $darkPink;
+    width: 150px;
+    height: 38px;
+    margin-right: 30px;
+  }
+
+  button.cancel-button:hover {
+    color: $pink;
+    border: 1px solid $pink;
+  }
+
+  .continue-button {
+    background-color: $darkPink;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid $darkPink;
+    width: 150px;
+    height: 38px;
+  }
+
+  button.continue-button:hover {
+    background-color: $pink;
+    border: 1px solid $pink;
+  }
+}
+
+.signin-error {
+  display: flex;
+  font-family: $Arimo;
+  letter-spacing: 0.5px;
+  color: $darkPink;
+  font-size: 14px;
+  margin: 22px 30px 0px;
+}
+
+.demo-user-wrapper {
+  display: flex;
+}
+
+.demo-user {
+  height: 36px;
+  width: 390px;
+  text-align: center;
+  font-family: $Arimo;
+  letter-spacing: 0.5px;
+  color: white;
+  background-color: $darkPink;
+  font-size: 15px;
+  display: inline-block;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+  padding-left: 17px;
+  margin-left: 30px;
+  margin-top: 7px;
+  border: 1px solid $darkPink;
+
+  &:before {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 100%;
+    width: 100px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -10.5em;
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+  }
+
+  &:hover {
+    background-color: $darkPink;
+    color: #fff;
+    cursor: pointer;
+
+    &:before {
+      transform: skewX(-45deg) translateX(50.5em);
+      transition: all 1s ease-in-out;
+    }
+  }
+}
+
+.empty-div {
+  display: flex;
+  height: 5px;
+}
