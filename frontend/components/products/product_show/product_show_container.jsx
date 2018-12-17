@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import ProductShow from "./product_show";
-import { fetchProduct } from '../../actions/product_actions';
-import { fetchBrand } from '../../actions/brand_actions';
+import { fetchProduct } from '../../../actions/product_actions';
+import { fetchBrand } from '../../../actions/brand_actions';
 
 const mstp = (state, ownParams) => {
   let productId = ownParams.match.params.productId;

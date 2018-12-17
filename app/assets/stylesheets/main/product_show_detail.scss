@@ -1,0 +1,37 @@
+@import '../variables';
+
+.product-show-detail {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $lightGray;
+  border-radius: 10px;
+
+  .product-show-tab-title {
+    display: flex;
+    justify-content: space-evenly;
+
+    .each-tab {
+      flex: 1;
+      text-align: center;
+      border: 1px solid $lightGray;
+      border-radius: 10px 10px 0 0;
+    }
+    
+    .tab-selected {
+      flex: 1;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .tab-selected:hover {
+      color: $darkPink;
+      cursor: pointer;
+    }
+  }
+
+  .product-show-tab-contents {
+    display: flex;
+    margin: 30px;
+  }
+
+}
