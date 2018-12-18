@@ -77,7 +77,7 @@ tarte_amazonian_clay_blush = Product.create!(
 
 tarte_inbloom_clay_eyeshadow_palette = Product.create!(
   name: 'Tartelette™ In Bloom Clay Eyeshadow Palette',
-  size: '12 x 0.053 oz/ 1.5 g',
+«  size: '12 x 0.053 oz/ 1.5 g',
   price: 39.00,
   category: 'Eye Palettes',
   brand_id: tarte.id,

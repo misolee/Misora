@@ -1,0 +1,26 @@
+.show-color {
+  .color-label {
+    width: 200px;
+    height: 40px;
+    border: 1px solid red;
+  }
+
+  .color-palette {
+    display: flex;
+  
+    .color-name {
+      flex: 1;
+      width: 50px;
+      height: 50px;
+      border: 1px solid lightgray;
+      transition: 0.25s;
+    }
+  }
+}
+
+
+.scale {
+  transform: scale(1.5);
+  z-index: 10;
+}
+

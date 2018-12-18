@@ -1,5 +1,6 @@
 import React from "react";
 import ProductShowDetail from "./product_show_details";
+import ProductShowColor from "./product_show_color";
 
 class ProductShow extends React.Component {
   
@@ -23,8 +24,8 @@ class ProductShow extends React.Component {
     if (this.props.products[this.props.productId]) {
       product = this.props.products[this.props.productId];
       brand = this.props.brands[this.props.products[product.id].brandId];
-    }
-
+		}
+		
     if (!product || !brand) return null;
 
     return (
@@ -84,7 +85,7 @@ class ProductShow extends React.Component {
 							</div>
 						</div>
 						<div className="product-show-color">
-							{ product.color }
+							<ProductShowColor colors={ product.color } />
 						</div>
 						<ProductShowDetail product={ product } />
 					</div>

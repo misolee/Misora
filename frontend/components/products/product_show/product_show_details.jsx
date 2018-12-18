@@ -16,7 +16,7 @@ class ProductShowDetail extends React.Component {
   }
   
   showInfo(tabsInfo, variable, labelText) {
-    return tabsInfo[this.state.index][variable] || (tabsInfo[this.state.index][variable] === []) ? (
+    return tabsInfo[this.state.index][variable] ? (
       < div className="sub-content-details" >
         <label className="sub-content-label">{ labelText }</label>
         <div>{ tabsInfo[this.state.index][ variable ] }</div>
