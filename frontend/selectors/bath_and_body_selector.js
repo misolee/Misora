@@ -3,5 +3,7 @@ export const allBathandBodyProducts = (state) =>
     product.category === "Body Moisturizer" ||
     product.category === "Bath and Body" ||
     product.category === "Scrub & Exfoliants" ||
-    product.category === "Hand Cream & Foot Cream"
+    product.category === "Hand Cream & Foot Cream" ||
+    product.category === "Body Wash & Shower Gel" ||
+    product.category === "Body Lotions & Body Oils"
   );

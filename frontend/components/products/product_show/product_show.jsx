@@ -16,7 +16,15 @@ class ProductShow extends React.Component {
       result.push(<option key={i} value={`${i}`}>{i}</option>);
     }
     return result;
-  }
+	}
+	
+	// handleColorPick() {
+	// 	return (e) => {
+	// 		let color = e.target.getAttribute("data-color")
+	// 		if ()
+	// 		console.warn(e.target.getAttribute("data-color"));
+	// 	}
+	// }
 
   render() {
     let product; 
@@ -96,10 +104,3 @@ class ProductShow extends React.Component {
 }
 
 export default ProductShow;
-
-// { product.color }
-// { product.what_it_is }
-// { product.what_it_does }
-// { product.what_else_you_need_to_know }
-// { product.how_to_use }
-// { product.ingredients }

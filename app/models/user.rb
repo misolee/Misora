@@ -60,4 +60,6 @@ class User < ApplicationRecord
   def email_cases
     email = self.email.downcase.strip
   end
+
+  has_many :basket_items
 end

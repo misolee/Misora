@@ -4,5 +4,6 @@ export const allMakeupProducts = (state) =>
 		product.category === "Eyeliner" || 
 		product.category === "Blush" ||
 		product.category === "Eye Palettes" ||
-		product.category === "BB & CC Cream"
+		product.category === "BB & CC Cream" ||
+		product.category === "Foundation"
 	);
