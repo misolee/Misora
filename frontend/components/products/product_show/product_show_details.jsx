@@ -16,10 +16,16 @@ class ProductShowDetail extends React.Component {
   }
   
   showInfo(tabsInfo, variable, labelText) {
-    return tabsInfo[this.state.index][variable] ? (
+    let content = tabsInfo[this.state.index][variable];
+    let show = content;
+
+    content = content && variable === "howToUse" ? content.map((text) => 
+      <div>- { text }</div>) : <div>{tabsInfo[this.state.index][variable]}</div>;
+
+    return show ? (
       < div className="sub-content-details" >
         <label className="sub-content-label">{ labelText }</label>
-        <div>{ tabsInfo[this.state.index][ variable ] }</div>
+        { content }
       </div >
     ) : null;
   }
@@ -69,6 +75,7 @@ class ProductShowDetail extends React.Component {
     let whatitis = this.showInfo(tabsInfo, "whatItIs", "What it is:")
     let whatitdoes = this.showInfo(tabsInfo, "whatItDoes", "What it does:");
     let whatelseyouneedtoknow = this.showInfo(tabsInfo, "whatElseYouNeedToKnow", "What else you need to know:");
+
     let howtouse = this.showInfo(tabsInfo, "howToUse", "How to use:");
     let ingredientsInfo = tabsInfo[this.state.index]["ingredients"]
 

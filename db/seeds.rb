@@ -27,6 +27,8 @@ yves_saint_laurent = Brand.create!(name: 'YVES SAINT LAURENT')
 moroccan_oil = Brand.create!(name: 'MOROCCAN OIL')
 philosophy = Brand.create!(name: 'PHILOSOPHY')
 victor_and_rolf = Brand.create!(name: 'VICTOR & ROLF')
+fresh = Brand.create!(name: 'FRESH')
+laneige = Brand.create!(name: 'LANEIGE')
 
 tatcha_water_cream = Product.create!(
   name: 'The Water Cream',
@@ -77,7 +79,7 @@ tarte_amazonian_clay_blush = Product.create!(
 
 tarte_inbloom_clay_eyeshadow_palette = Product.create!(
   name: 'Tartelette™ In Bloom Clay Eyeshadow Palette',
-«  size: '12 x 0.053 oz/ 1.5 g',
+  size: '12 x 0.053 oz/ 1.5 g',
   price: 39.00,
   category: 'Eye Palettes',
   brand_id: tarte.id,
@@ -93,7 +95,7 @@ tarte_inbloom_clay_eyeshadow_palette = Product.create!(
 
 dior_lip_glow = Product.create!(
   name: 'Dior Lip Glow',
-  color: ['Matte Pink - sheer matte ballet pink', 'Pink Glow - light pink', 'Coral Glow - peach', 'Berry - Sheer berry balm adjusts to your perfect lilac glow', 'Raspberry - 007 - magenta', 'Holographic Pink - light pink holographic', 'Holographic Purple - light purple holographic', 'Rose Gold - light pink with gold shimmer'],
+  color: ['Pink Glow - light pink', 'Coral Glow - peach', 'Berry - Sheer berry balm adjusts to your perfect lilac glow', 'Raspberry - magenta', 'Holographic Pink - light pink holographic', 'Holographic Purple - light purple holographic', 'Rose Gold - light pink with gold shimmer'],
   size: '0.12 oz/ 3.52 g',
   price: 34.00,
   category: 'Lip',
@@ -161,6 +163,41 @@ victor_and_rolf_flowerbomb = Product.create!(
  )
   victor_and_rolf_flowerbomb_attachment = open("https://s3-us-west-1.amazonaws.com/misora-products/victor+%26+rolf/victor%26rolf_flowerbomb.png")
   victor_and_rolf_flowerbomb.photos.attach(io: victor_and_rolf_flowerbomb_attachment, filename: 'victor_and_rolf_flowerbomb')
+
+
+fresh_sugar_advanced_therapy_lip_treatment = Product.create!(
+  name: 'Sugar Advanced Therapy Lip Treatment',
+  color: ['Translucent', 'Dream - sheer pink'],
+  size: '0.15 oz/ 4.3 g',
+  price: 26.00,
+  category: 'Lip',
+  brand_id: fresh.id,
+  what_it_is: 'A bestselling lip balm that hydrates for 24 hours and smooths the look of wrinkles for visibly fuller lips.',
+  what_else_you_need_to_know: 'The age-defying lip treatment is proven to improve volume and definition (read: plumper pout), making it ideal for overnight or a base layer for lipstick. The sugar formula also contains sea fennel to help smooth fine lines, antioxidant-rich orange extract, and moisturizing hyaluronic acid spheres.',
+  how_to_use: ['Apply to lips throughout the day and before bed.', 'For SPF protection, follow with your favorite Sugar Lip Treatment Sunscreen SPF 15.', 'Prep and prime with this lip treatment—use it as a base to keep lips hydrated under any long-wear lipstick, including matte and liquid lipstick.', 'Use this lip treatment as a recovery step after removing drying lipstick.'],
+ )
+  fresh_sugar_advanced_therapy_lip_treatment_attachment = open("https://s3-us-west-1.amazonaws.com/misora-products/fresh/fresh_sugar_advanced_therapy_lip_treatment.png")
+  fresh_sugar_advanced_therapy_lip_treatment.photos.attach(io: fresh_sugar_advanced_therapy_lip_treatment_attachment, filename: 'fresh_sugar_advanced_therapy_lip_treatment')
+
+
+laneige_bb_cushion_pore_blur = Product.create!(
+  name: 'BB Cushion Pore Blur',
+  color: ['No.11 Porcelain - for fair porcelain skin with neutral tones', 'No.21 Beige - for light skin with neutral tones', 'No.23 Sand - for light medium skin with neutral tones', 'No.35 Coffee - for medium dark skin with neutral tones', 'No.37 Cacao - for dark skin with neutral tones'],
+  size: '0.5 oz/ 15 g x 2',
+  price: 38.00,
+  category: 'BB & CC Cream',
+  brand_id: laneige.id,
+  what_it_is: 'A pore perfecting version of LANEIGE\'s award-winning BB Cushion, this lightweight, oil-absorbing formula targets shine for a semi-matte, soft-focus finish.',
+  what_else_you_need_to_know: 'This product is dermatologist tested. LANEIGE does not test ingredients or products on animals.',
+  how_to_use: ['Apply by pressing the puff into moistened sponge and pat onto face.', 'Reapply throughout the day if desired.'],
+  ingredients: 'Water, Cyclopentasiloxane, Methyl Trimethicone, Iron Oxides (CI 77492), Dicaprylyl Carbonate, Cetyl PEG/PPG-10/1 Dimethicone, Butylene Glycol, Cyclohexasiloxane, Niacinamide, Nylon-12, HDI/Trimethylol Hexyllactone Crosspolymer, Polymethyl Methacrylate, Iron Oxides (CI 77491), Lauryl PEG-9 Polydimethylsiloxyethyl Dimethicone, Acrylates/Ethylhexyl Acrylate/Dimethicone Methacrylate Copolymer, Iron Oxides (CI 77499), Sodium Chloride, Aluminum Hydroxide, Fragrance, Stearic Acid, Disteardimonium Hectorite, Dimethicone, Triethoxycaprylylsilane, Phenoxyethanol, Dimethicone/Vinyl Dimethicone Crosspolymer, Acrylates/Stearyl Acrylate/Dimethicone Methacrylate Copolymer, Trimethylsiloxysilicate, Ethylhexylglycerin, Disodium EDTA, Silica, Methyl Methacrylate Crosspolymer, Mentha Piperita (Peppermint) Extract, Pinus Sylvestris Leaf Extract, Hydrolyzed Corn Starch, Polypropylsilsesquioxane, Chenopodium Quinoa Seed Extract, Pentylene Glycol, Magnesium Sulfate, Calcium Chloride, Manganese Sulfate, Zinc Sulfate, Ascorbyl Glucoside.'
+ )
+  laneige_bb_cushion_pore_blur_attachment = open("https://s3-us-west-1.amazonaws.com/misora-products/laneige/laneige_bb_cushion_pore_blur.png")
+  laneige_bb_cushion_pore_blur.photos.attach(io: laneige_bb_cushion_pore_blur_attachment, filename: 'laneige_bb_cushion_pore_blur')
+
+
+
+
 
 
 #  = Product.create!(
