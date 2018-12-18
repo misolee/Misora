@@ -25,10 +25,11 @@
         width: 100px;
         height: 2px;
         margin: 0 auto;
-        border-bottom: 2px solid gray;
+        border-bottom: 2px solid $darkPink;
       }
 
       .selected-tab-title {
+        color: $darkPink;
         text-align: center;
         padding-bottom: 10px;
       }
@@ -49,7 +50,7 @@
       flex-direction: column;
       flex: 1;
       margin: 0 auto;
-      border: 1px solid $lightGray;
+      border-bottom: 1px solid $lightGray;
       border-radius: 10px 10px 0 0;
       padding-top: 10px;
 
@@ -81,4 +82,17 @@
     border-bottom-right-radius: 10px;
   }
 
+  .product-show-tab-contents {
+    display: flex;
+    flex-direction: column;
+
+    .sub-content-details {
+      display: flex;
+      flex-direction: column;
+
+      .sub-content-label {
+        font-weight: bold;
+      }
+    }
+  }
 }
