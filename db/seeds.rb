@@ -30,7 +30,6 @@ victor_and_rolf = Brand.create!(name: 'VICTOR & ROLF')
 
 tatcha_water_cream = Product.create!(
   name: 'The Water Cream',
-  color: [],
   size: ' 1.7 oz/ 50 mL',
   price: 68.00,
   category: 'Moisturizer',
@@ -52,11 +51,8 @@ stila_stayallday_liquid_eyeliner = Product.create!(
   price: 22.00,
   category: 'Eyeliner',
   brand_id: stila.id,
-  what_it_is: 'What it is: An easy-application, waterproof liquid liner that stays on all day and night.',
-  what_it_does: 'This easy-glide, quick-dry precision liner stays in place until you say when—no smudges, feathering, or running. The thin, marker-like tip is easy to use, even for the beauty beginner, and delivers any look—from a thin line to a bold, dramatic stroke. It goes on smoothly without skipping, smudging, or pulling, and lasts all day.',
-  what_else_you_need_to_know: '',
-  how_to_use: [],
-  ingredients: ''
+  what_it_is: 'An easy-application, waterproof liquid liner that stays on all day and night.',
+  what_it_does: 'This easy-glide, quick-dry precision liner stays in place until you say when—no smudges, feathering, or running. The thin, marker-like tip is easy to use, even for the beauty beginner, and delivers any look—from a thin line to a bold, dramatic stroke. It goes on smoothly without skipping, smudging, or pulling, and lasts all day.'
 )
   stila_stayallday_liquid_eyeliner_attachment = open("https://s3-us-west-1.amazonaws.com/misora-products/stila/liquid_eyeliner/stila_stayallday_liquid_eyeliner.jpg")
   stila_stayallday_liquid_eyeliner.photos.attach(io: stila_stayallday_liquid_eyeliner_attachment, filename: 'stila_stayallday_liquid_eyeliner')
@@ -81,7 +77,6 @@ tarte_amazonian_clay_blush = Product.create!(
 
 tarte_inbloom_clay_eyeshadow_palette = Product.create!(
   name: 'Tartelette™ In Bloom Clay Eyeshadow Palette',
-  color: [],
   size: '12 x 0.053 oz/ 1.5 g',
   price: 39.00,
   category: 'Eye Palettes',

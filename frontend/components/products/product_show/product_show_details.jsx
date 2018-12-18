@@ -15,6 +15,15 @@ class ProductShowDetail extends React.Component {
     this.setState({ index: Number(e.target.getAttribute("index")) });
   }
   
+  showInfo(tabsInfo, variable, labelText) {
+    return tabsInfo[this.state.index][variable] || (tabsInfo[this.state.index][variable] === []) ? (
+      < div className="sub-content-details" >
+        <label className="sub-content-label">{ labelText }</label>
+        <div>{ tabsInfo[this.state.index][ variable ] }</div>
+      </div >
+    ) : null;
+  }
+
   render() {
     let { whatItIs, whatItDoes, whatElseYouNeedToKnow, howToUse, ingredients } = this.props.product;
 
@@ -57,38 +66,10 @@ class ProductShowDetail extends React.Component {
       }
     });
 
-    let whatitis = (
-      < div className = "sub-content-details" >
-        <label className="sub-content-label">What it is:</label>
-        <div>{ tabsInfo[this.state.index]["whatItIs"] }</div>
-      </div >
-    )
-
-    let whatitdoes = (
-      < div className = "sub-content-details" >
-        <label className="sub-content-label">What it does:</label>
-        <div>{ tabsInfo[this.state.index]["whatItDoes"] }</div>
-      </div >
-    )
-
-    let whatelseyouneedtoknow = (
-      < div className = "sub-content-details" >
-        <label className="sub-content-label">What else you need to know:</label>
-        <div>{ tabsInfo[this.state.index]["whatElseYouNeedToKnow"] }</div>
-      </div >
-    )
-
-    let howtouse = (
-      < div className = "sub-content-details" >
-        <label className="sub-content-label">How to use:</label>
-        <div>{ tabsInfo[this.state.index]["howToUse"] }</div>
-      </div >
-    )
-      
-    // let whatitis = tabsInfo[this.state.index]["whatItIs"]
-    // let whatitdoes = tabsInfo[this.state.index]["whatItDoes"];
-    // let whatelseyouneedtoknow = tabsInfo[this.state.index]["whatElseYouNeedToKnow"];
-    // let howtouse = tabsInfo[this.state.index]["howToUse"];
+    let whatitis = this.showInfo(tabsInfo, "whatItIs", "What it is:")
+    let whatitdoes = this.showInfo(tabsInfo, "whatItDoes", "What it does:");
+    let whatelseyouneedtoknow = this.showInfo(tabsInfo, "whatElseYouNeedToKnow", "What else you need to know:");
+    let howtouse = this.showInfo(tabsInfo, "howToUse", "How to use:");
     let ingredientsInfo = tabsInfo[this.state.index]["ingredients"]
 
     return (
@@ -109,44 +90,3 @@ class ProductShowDetail extends React.Component {
 }
 
 export default ProductShowDetail;
-      // <div>
-      //   <label>
-      //     Details
-      //     { whatItIs }
-      //     { whatItDoes }
-      //     { whatElseYouNeedToKnow }
-      //   </label>
-      // </div>
-      // <div>
-      //   <label>
-      //     { howToUse }
-      //   </label>
-      // </div>
-      // <div>
-      //   <label>
-      //     { ingredients }
-      //   </label>
-      // </div>
-      
-    // <div className="product-show-tab">
-    //   <div className="product-show-tab-labels">
-    //     Details
-    //   </div>
-    //   <div className="product-show-tab-content">
-    //     { product.content }
-    //   </div>
-    // </div>
-
-
-// const tabsInfo = [
-//   {
-//     title: "Details",
-//     content: [ whatItIs, whatItDoes, whatElseYouNeedToKnow ]
-//   }, {
-//     title: "How to Use",
-//     content: howToUse
-//   }, {
-//     title: "Ingredients",
-//     content: ingredients
-//   }
-// ]

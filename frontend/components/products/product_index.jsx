@@ -25,7 +25,12 @@ class AllProductIndex extends React.Component {
     return (
       <div className="all-product-index-page">
         <div className="all-product-left-navbar">
-          PRODUCT BAR
+
+
+
+
+
+        
         </div>
         <div className="all-product-index">
           <div className="product-count">
