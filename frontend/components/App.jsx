@@ -13,6 +13,7 @@ import AllHair from "./products/hair_container";
 import AllBathandBody from "./products/bath_and_body_container";
 import AllFragrance from "./products/fragrance_container";
 import ProductShow from "./products/product_show/product_show_container";
+import Basket from "./basketItems/basket_container";
 
 const App = () => (
 	<div className="page">
@@ -28,6 +29,7 @@ const App = () => (
 			<Route exact path={ "/products/bath&body" } component={ AllBathandBody } />
 			<Route exact path={ "/products/fragrance" } component={ AllFragrance } />
 			<Route exact path={ "/products/:productName~:productId" } component={ ProductShow } />
+			<Route exact path={ "/basket"} component={ Basket } />
 			<Redirect to="/" />
 		</Switch>
 		<Footer />

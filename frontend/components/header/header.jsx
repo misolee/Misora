@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Header = (props) => {
 
@@ -60,7 +61,9 @@ const Header = (props) => {
         <div className="middle-break" />
         <div className="middle-break2" />
       </div>
-      {bagIcons}
+      <Link to='/basket'>
+        { bagIcons }
+      </Link>
     </div>
   );
 }
