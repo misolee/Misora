@@ -48,7 +48,6 @@ class ProductShow extends React.Component {
 
 	handleSubmit() {
 		return () => {
-			console.warn(this.state)
 			this.props.createBasketItem(this.state);
 		}
 	}
@@ -75,10 +74,11 @@ class ProductShow extends React.Component {
 						<div className="product-show-information">
 							<div className="product-show-info">
 								<div className="product-show-brand-name-size">
-									<div className="product-show-brand">{brand.name}</div>
+									<div className="product-show-brand">{ brand.name }</div>
 									<div className="product-show-name-size">
-										<div className="product-show-name">{product.name}</div>
-										<div className="product-show-size">{product.size}</div>
+										<div className="product-show-name">{ product.name }</div>
+										<div className="product-show-size">{ product.size }</div>
+										<div className="product-show-size">ITEM { product.id }</div>
 									</div>
 								</div>
 								<div className="product-show-price-free-shipping">
