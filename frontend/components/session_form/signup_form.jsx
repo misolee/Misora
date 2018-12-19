@@ -31,6 +31,11 @@ class SignupForm extends React.Component {
 	handleOptionChange(field) {
 		return (e) => this.mergeDate(field, e.target.value);
 	}
+	
+	mergeDate(type, value) {
+		console.log("inside form");
+		this.setState({ [type]: value }, () => this.postUpdate());
+	}
 
 	postUpdate() {
 		let { year, month, day } = this.state;
@@ -38,9 +43,6 @@ class SignupForm extends React.Component {
 		this.setState({ birthday: newDate });
 	}
 
-	mergeDate(type, value) {
-		this.setState({ [type]: value }, () => this.postUpdate());
-	}
 
 	getAllDays() {
 		let result = [];

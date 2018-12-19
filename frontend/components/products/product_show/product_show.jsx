@@ -3,6 +3,16 @@ import ProductShowDetail from "./product_show_details";
 import ProductShowColor from "./product_show_color";
 
 class ProductShow extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			currentUserId: props.currentUserId,
+			product_id: parseInt(props.productId),
+			quantity: 1,
+			color: 'none'
+		};
+	}
   
   componentDidMount() {
     let productId = this.props.productId;
@@ -11,22 +21,40 @@ class ProductShow extends React.Component {
   }
 
   getQuantities() {
-    let result = [];
+		let result = [];
     for (let i = 1; i < 11; i++) {
-      result.push(<option key={i} value={`${i}`}>{i}</option>);
+			result.push(<option key={i} value={`${i}`}>{i}</option>);
     }
     return result;
 	}
+
+	handleQuantity() {
+		return (e) => {
+			this.setState({ quantity: e.target.value }, () => this.updateQuantity())
+		}
+	}
+
+	updateQuantity() {
+		let { quantity } = this.state;
+		this.setState({ quantity });
+	}
 	
-	// handleColorPick() {
-	// 	return (e) => {
-	// 		let color = e.target.getAttribute("data-color")
-	// 		if ()
-	// 		console.warn(e.target.getAttribute("data-color"));
-	// 	}
-	// }
+	handleColorPick() {
+		return (e) => {
+			let pickedColor = e.target.getAttribute("data-color")
+			this.setState({color: pickedColor})
+		}
+	}
+
+	handleSubmit() {
+		return () => {
+			console.warn(this.state)
+			this.props.createBasketItem(this.state);
+		}
+	}
 
   render() {
+		console.error(this.state)
     let product; 
     let brand;
     if (this.props.products[this.props.productId]) {
@@ -74,12 +102,12 @@ class ProductShow extends React.Component {
 								</div>
 								<div className="product-show-basket">
 									<div className="number-of-quantity">
-										<select id="number-of-quantity" defaultValue="1">
-											{this.getQuantities()}
+										<select id="number-of-quantity" defaultValue="1" onChange={this.handleQuantity()}>
+											{ this.getQuantities() }
 										</select>
 									</div>
 									<div className="add-to-basket">
-										<button id="add-to-basket">ADD TO BASKET</button>
+										<button id="add-to-basket" onClick={ this.handleSubmit() }>ADD TO BASKET</button>
 										<button id="add-to-loves">
 											<i id="heart-add-to-loves" className="fas fa-heart" />
 											ADD TO LOVES
@@ -92,7 +120,7 @@ class ProductShow extends React.Component {
 								</div>
 							</div>
 						</div>
-						<div className="product-show-color">
+						<div className="product-show-color" onClick={ this.handleColorPick() }>
 							<ProductShowColor colors={ product.color } />
 						</div>
 						<ProductShowDetail product={ product } />

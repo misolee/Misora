@@ -8,6 +8,10 @@ class AllProductIndex extends React.Component {
     this.props.fetchBrands();
   }
 
+  componentWillUnmount() {
+    window.scrollTo(0,0);
+  }
+
   render() {
     let allProducts = this.props.products;
 		let allBrands = this.props.brands;
@@ -25,12 +29,6 @@ class AllProductIndex extends React.Component {
     return (
       <div className="all-product-index-page">
         <div className="all-product-left-navbar">
-
-
-
-
-
-        
         </div>
         <div className="all-product-index">
           <div className="product-count">

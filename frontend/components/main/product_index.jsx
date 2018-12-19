@@ -9,6 +9,10 @@ class ProductIndex extends React.Component {
     this.props.fetchBrands();
   }
 
+  componentWillUnmount() {
+    window.scrollTo(0, 0);
+  }
+
   getRandomItems(products, count, brands) {
     let clonedProducts = cloneDeep(products);
     let result = [];

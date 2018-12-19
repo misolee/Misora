@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import sessionErrorsReducer from './session_errors_reducer';
+import basketItemsErrorsReducer from './basket_items_errors_reducer';
 
 const errorsReducer = combineReducers({
-  session: sessionErrorsReducer
+  session: sessionErrorsReducer,
+  basketItems: basketItemsErrorsReducer
 });
 
 export default errorsReducer;
