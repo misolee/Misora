@@ -21,6 +21,7 @@ class LoginForm extends React.Component {
       e.preventDefault();
       let user = Object.assign({}, this.state);
       this.props.login(user).then(this.props.closeModal);
+      this.props.history.push('/');
     };
   }
 
@@ -93,7 +94,7 @@ class LoginForm extends React.Component {
         </div>
         {passwordField}
         <div className="cancel-submit-button">
-          <button className="cancel-button" onClick={this.props.closeModal}>Cancel</button>
+          <button className="cancel-button" onClick={ this.props.closeModal }>Cancel</button>
           <button className="continue-button">Continue</button>
         </div>
       </form>

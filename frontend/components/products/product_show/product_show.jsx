@@ -53,7 +53,6 @@ class ProductShow extends React.Component {
 	}
 
   render() {
-		console.error(this.state)
     let product; 
     let brand;
     if (this.props.products[this.props.productId]) {

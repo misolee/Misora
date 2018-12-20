@@ -1,19 +1,21 @@
 import { RECEIVE_ALL_BASKET_ITEMS, REMOVE_BASKET_ITEM } from '../actions/basket_item_actions';
-import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
+import { LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { merge } from 'lodash'
 
 export default (state = {}, action) => {
   Object.freeze(state);
   let newState;
   switch (action.type) {
+    case RECEIVE_CURRENT_USER:
+      return action.currentUser.basketItems;
     case RECEIVE_ALL_BASKET_ITEMS:
-      newState = merge({}, state, action.basketItems)
+      newState = merge({}, state, action.basketItems);
       return action.basketItems;
     case LOGOUT_CURRENT_USER:
       return {}
     case REMOVE_BASKET_ITEM:
       newState = merge({}, state);
-      delete newState[action.basketItemId];
+      delete newState[action.basketItem.id];
       return newState;
     default:
       return state;

@@ -10,6 +10,7 @@
   color: $darkGray;
   width: 63%;
   margin: 0 auto;
+  margin-bottom: 40px;
 
   .my-basket {
     font-family: $Cormorant-Garamond;
@@ -32,6 +33,11 @@
     
     .continue-shopping {
       margin-right: 45px;
+    }
+
+    .continue-shopping:hover {
+      cursor: pointer;
+      color: $darkPink;
     }
   }
   
@@ -64,9 +70,26 @@
     }
 
     .basket-total-price {
+      display: flex;
+      flex-direction: column;
       flex: 1;
       margin-right: 45px;
       border: 1px solid green;
+
+      .merchandise-subtotal {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .shipping-and-handling {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .tax {
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 }
