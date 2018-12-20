@@ -82,7 +82,7 @@ class Basket extends React.Component {
               </div>
               <div className="shipping-and-handling">
                 <div>Shipping & Handling</div>
-                <div>{ shipping }</div>
+                <div className="shipping-price">{ shipping }</div>
               </div>
               <div className="tax">
                 <div>Tax</div>

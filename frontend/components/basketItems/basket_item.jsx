@@ -16,9 +16,15 @@ class BasketItem extends React.Component {
   handleRemoveItem() {
     return (e) => {
       e.preventDefault();
-      this.props.deleteBasketItem(this.state.id);
+      this.props.deleteBasketItem(this.props.basketId);
     };
   }
+
+  // handleState() {
+  //   this.setState(this.props);
+  //   console.warn(this.state)
+  //   console.error(this.props)
+  // }
   
   getQuantities() {
     let result = [];

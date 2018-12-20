@@ -48,6 +48,12 @@ class ProductShow extends React.Component {
 		}
 	}
 
+	addedToBasket() {
+		let divEl = document.getElementsByClassName("quantity-added-to-basket");
+		divEl[0].style.display = 'block';
+		setTimeout(() => divEl[0].style.display = 'none', 2000)
+	}
+
 	handleSubmit() {
 		// let product = this.props.basketItems.filter((item) => item.productId === this.state.product_id);
 		// if (product[0].quantity >= 10) {
@@ -56,6 +62,7 @@ class ProductShow extends React.Component {
 
 		return () => {
 			this.props.createBasketItem(this.state);
+			this.addedToBasket()
 		}
 	}
 
@@ -71,10 +78,10 @@ class ProductShow extends React.Component {
 
     return (
 			<div className="product-show-page">
-				<div className="product-show-category">{product.category}</div>
+				<div className="product-show-category">{ product.category }</div>
 				<div className="product-show-main">
 					<div className="product-show-image">
-						<img className="index-one-product-image" src={product.photoUrls[0]} />
+						<img className="index-one-product-image" src={ product.photoUrls[0] } />
 					</div>
 					<div className="product-show-information-with-details">
 						<div className="product-show-information">
@@ -89,7 +96,7 @@ class ProductShow extends React.Component {
 								</div>
 								<div className="product-show-price-free-shipping">
 									<div className="product-show-price">
-										${product.price}.00
+										${ product.price }.00
 									</div>
 									<div className="product-show-free-shipping">
 										FREE SHIPPING for $50 or more
@@ -108,12 +115,13 @@ class ProductShow extends React.Component {
 								</div>
 								<div className="product-show-basket">
 									<div className="number-of-quantity">
-										<select id="number-of-quantity" defaultValue="1" onChange={this.handleQuantity()}>
+										<select id="number-of-quantity" defaultValue="1" onChange={ this.handleQuantity() }>
 											{ this.getQuantities() }
 										</select>
 									</div>
 									<div className="add-to-basket">
 										<button id="add-to-basket" onClick={ this.handleSubmit() }>ADD TO BASKET</button>
+										<div className="quantity-added-to-basket">{ this.state.quantity } item(s) added to basket</div>
 										<button id="add-to-loves">
 											<i id="heart-add-to-loves" className="fas fa-heart" />
 											ADD TO LOVES

@@ -23,7 +23,7 @@ function LoginSignupModal({ modal, closeModal }) {
 
   return (
     <div className="outsideSigninSignup" onClick={closeModal}>
-      {component}
+      { component }
     </div>
   );
 }

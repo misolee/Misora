@@ -64,7 +64,7 @@
       flex-direction: column;
       flex: 2.2;
       margin: 0 45px;
-      background-color: rgb(236, 235, 235);
+      background-color: rgb(243, 243, 243);
 
       .items-in-basket {
         font-weight: bold;
@@ -88,7 +88,7 @@
       .basket-total-price-div {
         display: flex;
         flex-direction: column;
-        border: 2px solid rgb(236, 235, 235);
+        border: 2px solid rgb(243, 243, 243);
         font-size: 14px;
         margin-right: 45px;
         padding: 15px;
@@ -112,7 +112,10 @@
           display: flex;
           justify-content: space-between;
           margin-bottom: 7px;
-          font-weight: bold;
+
+          .shipping-price {
+            font-weight: bold;
+          }
         }
   
         .tax {
@@ -123,7 +126,7 @@
 
         .basket-empty-div-line {
           height: 1px;
-          background-color: rgb(236, 235, 235);
+          background-color: rgb(243, 243, 243);
         }
   
         .estimated-total {

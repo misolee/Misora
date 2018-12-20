@@ -21,7 +21,7 @@ class LoginForm extends React.Component {
       e.preventDefault();
       let user = Object.assign({}, this.state);
       this.props.login(user).then(this.props.closeModal);
-      this.props.history.push('/');
+      // this.props.history.push('/');
     };
   }
 

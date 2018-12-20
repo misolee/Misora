@@ -12,7 +12,7 @@ const underNavBar = () => (
       <Link className="undernavbar-button" to='/products/fragrance'>FRAGRANCE</Link>
     </div>
     <div className="pinkBorderHeader2">
-      <div className="free-shipping">FREE SHIPPING ALL DAY AND EVERY DAY</div>
+      <div className="free-shipping">FREE SHIPPING FOR $50 OR MORE</div>
     </div>
   </div>
 );
