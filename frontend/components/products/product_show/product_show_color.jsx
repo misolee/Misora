@@ -23,13 +23,20 @@ class ProductShowColor extends React.Component {
       // }); 
       
       div.addEventListener("click", (e) => {
-        Array.from(colors).forEach((color) => {
+        Array.from(colors).forEach((color, i) => {
           color.classList.remove("scale");
         });
         label.innerHTML = `COLOR: ${colorName}`;
         div.classList.toggle("scale");
       });
     });
+
+    let color = document.querySelector(".color-name");
+    if (color) {
+      color.classList.add("scale");
+      let name = color.getAttribute("data-color");
+      label.innerHTML = `COLOR: ${name}`;
+    }
   }
 
   colors() {

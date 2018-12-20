@@ -1,16 +1,96 @@
-.very-bottom {
-  height: 285px;
-  background-color: $pink;
+@import '../variables';
+
+.footer {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
+  background-color: $pink;
+  min-width: 965px;
   align-items: center;
-  min-width: 1050px;
+  margin: 0 auto;
+  justify-content: center;
+  color: white;
+  font-family: $Arimo;
+  letter-spacing: 0.5px;
+  padding: 45px;
+  font-size: 13px;
+
+  .footer-big-columns {
+    display: flex;
+    min-width: inherit;
+    justify-content: space-between;
+  }
+
+  .footer-label {
+    font-weight: bold;
+    padding-bottom: 15px;
+    font-size: 15px;
+  }
+
+  .footer-links {
+
+    div {
+      padding: 5px 0;
+    }
+
+    div:hover {
+      text-decoration: underline;
+      cursor: pointer;
+      color: $darkPink;
+    }
+  }
+
+  .footer-empty-line {
+    background-color: white;
+    height: 1px;
+    min-width: inherit;
+    margin: 45px 0 25px 0;
+  }
+
+  .footer-emails-and-links {
+    display: flex;
+    min-width: inherit;
+    justify-content: space-between;
+    align-items: center;
+
+		.footer-email {
+      display: flex;
+
+      .footer-signup-for-email {
+        align-items: center;
+      }
+  
+      input {
+        border: 1px solid white;
+        border-radius: 5px;
+        height: 36px;
+        width: 390px;
+      }
+  
+      input[type='text'] {
+        padding-left: 17px;
+        font-size: 15px;
+        font-family: $Arimo;
+        letter-spacing: 0.5px;
+        color: white;
+      }
+  
+      input[type='text']::placeholder {
+        color: white;
+      }
+  
+      input[type='text']:focus {
+        border: 1px solid $darkPink;
+        color: $darkPink;
+      }
+    }
+    
+  }
 }
 
 .footer-icons {
-  width: 70%;
-  min-width: 1050px;
-  display: flex;
+  // width: 70%;
+  min-width: inherit;
+  // display: flex;
   flex-direction: row-reverse;
   margin: 0 auto;
   

@@ -19,7 +19,7 @@ class BasketItem extends React.Component {
       this.props.deleteBasketItem(this.props.basketId);
     };
   }
-
+  
   // handleState() {
   //   this.setState(this.props);
   //   console.warn(this.state)

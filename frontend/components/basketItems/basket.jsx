@@ -15,13 +15,13 @@ class Basket extends React.Component {
 
   render() {
     let brands = this.props.brands;
-    let products = this.props.basketItems.map((item, i) => {
+    let products = this.props.basketItems.map((item) => {
       return (
         <BasketItem 
         product={ this.props.products[item.productId] }
         productId={ item.productId }
         basketId={ item.id }
-        key={ i }
+        key={ item.id }
         color={ item.color }
         quantity={ item.quantity }
         brands={ brands }

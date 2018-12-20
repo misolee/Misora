@@ -16,7 +16,10 @@ class ProductShow extends React.Component {
   componentDidMount() {
     let productId = this.props.productId;
     this.props.fetchProduct(productId)
-			.then((res) => this.props.fetchBrand(res.product.brandId));
+			.then((res) => {
+				this.props.fetchBrand(res.product.brandId);
+				this.setState({color: this.props.product.color[0]});
+			});
 		this.props.fetchBasketItems();
   }
 
@@ -29,8 +32,6 @@ class ProductShow extends React.Component {
 	}
 
 	handleQuantity() {
-		// console.error(this.state.product_id)
-		// console.warn(this.props.basketItems.filter((item) => item.productId === this.state.product_id));
 		return (e) => {
 			this.setState({ quantity: e.target.value }, () => this.updateQuantity());
 		}
@@ -53,28 +54,25 @@ class ProductShow extends React.Component {
 		divEl[0].style.display = 'block';
 		setTimeout(() => divEl[0].style.display = 'none', 2000)
 	}
-
+	
 	handleSubmit() {
-		// let product = this.props.basketItems.filter((item) => item.productId === this.state.product_id);
-		// if (product[0].quantity >= 10) {
-		// 	this.setState({ quantity: 10 })
-		// }
-
 		return () => {
-			this.props.createBasketItem(this.state);
-			this.addedToBasket()
+			this.props.createBasketItem(this.state)
+			.then(null, () => setTimeout(this.props.clearErrors, 2000));
+			this.addedToBasket();
 		}
 	}
 
   render() {
-    let product; 
+		const { product } = this.props;
     let brand;
-    if (this.props.products[this.props.productId]) {
-      product = this.props.products[this.props.productId];
-      brand = this.props.brands[this.props.products[product.id].brandId];
+    if (product) {
+			brand = this.props.brands[product.brandId];
 		}
 		
-    if (!product || !brand) return null;
+		if (!product || !brand) return null;
+
+		let errors = this.props.errors.map((error) => error)
 
     return (
 			<div className="product-show-page">
@@ -119,17 +117,18 @@ class ProductShow extends React.Component {
 											{ this.getQuantities() }
 										</select>
 									</div>
-									<div className="add-to-basket">
-										<button id="add-to-basket" onClick={ this.handleSubmit() }>ADD TO BASKET</button>
-										<div className="quantity-added-to-basket">{ this.state.quantity } item(s) added to basket</div>
-										<button id="add-to-loves">
-											<i id="heart-add-to-loves" className="fas fa-heart" />
-											ADD TO LOVES
-										</button>
-										<div className="product-show-find-in-store-zip-code">
-											<div className="find-in-store">Find in store</div>
-											<input className="zip-code" type="text" placeholder="Enter ZIP/Postal Code" maxLength="5"/>
-										</div>
+									<button id="add-to-basket" onClick={ this.props.currentUserId ? this.handleSubmit() : () => this.props.openModal('login') }>ADD TO BASKET</button>
+									<div className="quantity-added-to-basket">{ this.state.quantity } item(s) added to basket</div>
+								</div>
+								<div className="limit-to-basket">{ errors }</div>
+								<div className="add-to-basket">
+									<button id="add-to-loves">
+										<i id="heart-add-to-loves" className="fas fa-heart" />
+										ADD TO LOVES
+									</button>
+									<div className="product-show-find-in-store-zip-code">
+										<div className="find-in-store">Find in store</div>
+										<input className="zip-code" type="text" placeholder="Enter ZIP/Postal Code" maxLength="5"/>
 									</div>
 								</div>
 							</div>

@@ -3,6 +3,8 @@ import ProductShow from "./product_show";
 import { fetchProduct } from '../../../actions/product_actions';
 import { fetchBrand } from '../../../actions/brand_actions';
 import { createBasketItem, fetchBasketItems } from '../../../actions/basket_item_actions';
+import { clearErrors } from "../../../actions/session_actions";
+import { openModal } from "../../../actions/modal_actions";
 
 const mstp = (state, ownParams) => {
   let productId = ownParams.match.params.productId;
@@ -10,7 +12,7 @@ const mstp = (state, ownParams) => {
   let basketItems = Object.values(state.entities.basketItems);
   
   return({
-    products: state.entities.products,
+    product: state.entities.products[productId],
     brands: state.entities.brands,
     errors: state.errors.basketItems,
     productId,
@@ -24,7 +26,9 @@ const mdtp = (dispatch) => {
     fetchProduct: (id) => dispatch(fetchProduct(id)),
     fetchBrand: (id) => dispatch(fetchBrand(id)),
     createBasketItem: (basketItem) => dispatch(createBasketItem(basketItem)),
-    fetchBasketItems: () => dispatch(fetchBasketItems())
+    fetchBasketItems: () => dispatch(fetchBasketItems()),
+    clearErrors: () => dispatch(clearErrors()),
+    openModal: (modal) => dispatch(openModal(modal))
   });
 };
 
