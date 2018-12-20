@@ -4,6 +4,10 @@ select {
   $bg-color: white;
   $text-color: $darkGray;
   height: 38px;
+  color: $text-color;
+  padding: .33em .5em;
+  width: 100%;
+  font-size: 13px;
 
   background: {
     color: $bg-color;
@@ -20,10 +24,6 @@ select {
     right-color: mix($bg-color, $lightGray, 60%);
     bottom-color: mix($bg-color, $lightGray, 60%);
   }
-
-  color: $text-color;
-  padding: .33em .5em;
-  width: 100%;
 }
 
 select:focus {

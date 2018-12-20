@@ -5,15 +5,14 @@
   flex-direction: column;
   font-family: $Arimo;
   letter-spacing: 0.5px;
-  color: gray;
+  color: $darkGray;
   min-width: 1050px;
   width: 70%;
   margin: 0 auto;
   
   .product-show-category {
     font-weight: bold;
-    padding: 20px 0 20px 25px;
-    min-width: 1050px;
+    padding: 20px 25px 20px 25px;
   }
 }
 
@@ -49,7 +48,7 @@
           display: flex;
           flex-direction: column;
           flex: 2;
-          min-width: 220px;
+          min-width: 263px;
         
           .product-show-brand {
             font-weight: bold;
@@ -74,6 +73,7 @@
           flex-direction: column;
           font-weight: bold;
           margin: 0 15px;
+          width: 115px;
           
           .product-show-price {
             width: 110px;

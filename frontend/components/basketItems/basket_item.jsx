@@ -1,54 +1,86 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 class BasketItem extends React.Component {
   constructor(props) {
     super(props);
-  } 
 
+    this.state = {
+      id: props.basketId,
+      product_id: props.productId,
+      quantity: props.quantity,
+      color: props.color
+    };
+  } 
+  
   handleRemoveItem() {
+    // console.error(this.state.quantity);
     return (e) => {
       e.preventDefault();
+      // this.props.action();
       this.props.deleteBasketItem(this.props.basketId);
+      this.setState({id: this.props.basketId})
+      // .then(this.props.fetchBasketItems());
     };
   }
-
+  
+  getQuantities() {
+    let result = [];
+    for (let i = 1; i < 11; i++) {
+      result.push(<option key={i} value={`${i}`}>{i}</option>);
+    }
+    return result;
+  }
+  
+  handleQuantity() {
+    console.error(this.state.id)
+    console.warn(this.props.basketId)
+    return (e) => {
+      this.setState({ quantity: e.target.value }, () => this.props.updateBasketItem(this.state));
+    }
+  }
+  
   render() {
-    let { product } = this.props;
+    let { product, color, brands, quantity } = this.props;
     if (!product) return null;
     
     return(
       <div className="basket-product-details">
         <div className="basket-product-details-box">
           <div className="basket-product-image">
-            <img src={ this.props.product.photoUrls[0] } />
+            <img src={ product.photoUrls[0] } />
           </div>
           <div className="basket-one-product-details">
-            <div className="basket-one-product-brand-name">
-              { this.props.brands[product.brandId].name }
-            </div>
-            <div className="basket-one-product-name">
-              { this.props.product.name }
-            </div>
+            <Link to={`/products/${product.name}~${product.id}`} className="link-back-to-details">
+              <div className="basket-one-product-brand-name">
+                { brands[product.brandId].name }
+              </div>
+              <div className="basket-one-product-name">
+                { product.name }
+              </div>
+            </Link>
             <div className="basket-one-product-size-id">
               <div className="basket-one-product-size">
-                SIZE { this.props.product.size }
+                SIZE { product.size }
               </div>
               <i className="fas fa-circle"></i>
               <div className="basket-one-product-id">
-                ITEM { this.props.product.id }
+                ITEM { product.id }
               </div>
             </div>
             <div className="basket-one-product-color">
-              COLOR: { this.props.color }
+              COLOR: { color }
             </div>
           </div>
           <div className="basket-one-product-quantity-price-buttons">
             <div className="basket-one-product-quantity-price">
               <div className="basket-one-product-quantity">
-                { this.props.quantity }
+                <select id="number-of-quantity-in-basket" value={ this.state.quantity } onChange={ this.handleQuantity() }>
+                  { this.getQuantities() }
+                </select>
               </div>
               <div className="basket-one-product-price">
-                $<span className="basket-one-product-single-price">{this.props.product.price * this.props.quantity}</span>.00
+                ${(product.price * quantity).toFixed(2)}
               </div>
             </div>
             <div className="basket-one-product-remove-button-move-to-loves">

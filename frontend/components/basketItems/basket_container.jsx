@@ -9,10 +9,12 @@ const mstp = (state) => {
   let products = state.entities.products;
   let brands = state.entities.brands;
 
+
   return ({
     basketItems,
     products,
-    brands
+    brands,
+    errors: state.errors.session
   });
 };
 

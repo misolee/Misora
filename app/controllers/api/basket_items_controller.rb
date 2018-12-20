@@ -29,20 +29,27 @@ class Api::BasketItemsController < ApplicationController
     end
   end
   
-  def update
+  def update   
+    @basket_items = BasketItem.where(user_id: current_user.id)
     @basket_item = BasketItem.find(params[:id])
     
     if @basket_item.update(basket_item_params)
-      render :show
+      render :index
     else
-      render json: ['Already in basket'], status: 422
+      render json: ['Try AGAIN'], status: 422
     end
   end
   
   def destroy
+    # @basket_items = BasketItem.where(user_id: current_user.id)
     @basket_item = BasketItem.find(params[:id])
-    @basket_item.destroy
-    render :show
+
+    if @basket_item
+      @basket_item.destroy
+      render :show
+    else
+      render json: ["test"], status: 422
+    end
   end
   
   private

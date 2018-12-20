@@ -41,6 +41,11 @@
         margin-top: 5px;
       }
 
+      .link-back-to-details:hover {
+        color: $darkPink;
+        text-decoration: underline;
+      }
+
       .basket-one-product-size-id {
         display: flex;
         color: $lightGray;
@@ -69,15 +74,15 @@
         display: flex;
         justify-content: space-between;
         flex: 2;
-        padding: 0 10px;
-        // border: 1px solid blue;
   
-        .basket-one-product-quantity-price {
-  
+        .basket-one-product-quantity {
+          #number-of-quantity-in-basket { 
+            width: 55px;
+          }
         }
   
         .basket-one-product-price {
-  
+          font-weight: bold;
         }
       }
 

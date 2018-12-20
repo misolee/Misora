@@ -7,7 +7,6 @@ class ProductShow extends React.Component {
 		super(props);
 
 		this.state = {
-			currentUserId: props.currentUserId,
 			product_id: parseInt(props.productId),
 			quantity: 1,
 			color: 'none'
@@ -17,7 +16,8 @@ class ProductShow extends React.Component {
   componentDidMount() {
     let productId = this.props.productId;
     this.props.fetchProduct(productId)
-      .then((res) => this.props.fetchBrand(res.product.brandId));
+			.then((res) => this.props.fetchBrand(res.product.brandId));
+		this.props.fetchBasketItems();
   }
 
   getQuantities() {
@@ -29,8 +29,10 @@ class ProductShow extends React.Component {
 	}
 
 	handleQuantity() {
+		// console.error(this.state.product_id)
+		// console.warn(this.props.basketItems.filter((item) => item.productId === this.state.product_id));
 		return (e) => {
-			this.setState({ quantity: e.target.value }, () => this.updateQuantity())
+			this.setState({ quantity: e.target.value }, () => this.updateQuantity());
 		}
 	}
 
@@ -47,6 +49,11 @@ class ProductShow extends React.Component {
 	}
 
 	handleSubmit() {
+		// let product = this.props.basketItems.filter((item) => item.productId === this.state.product_id);
+		// if (product[0].quantity >= 10) {
+		// 	this.setState({ quantity: 10 })
+		// }
+
 		return () => {
 			this.props.createBasketItem(this.state);
 		}
@@ -85,7 +92,7 @@ class ProductShow extends React.Component {
 										${product.price}.00
 									</div>
 									<div className="product-show-free-shipping">
-										FREE SHIPPING
+										FREE SHIPPING for $50 or more
 									</div>
 								</div>
 							</div>

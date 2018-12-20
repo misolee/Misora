@@ -6,10 +6,12 @@ import { fetchBrands } from '../../actions/brand_actions';
 const mstp = (state) => {
   let products = Object.values(state.entities.products);
   let brands = state.entities.brands;
+  let basketItems = state.entities.basketItems;
 
   return ({
     products,
-    brands
+    brands,
+    basketItems
   });
 };
 
