@@ -14,13 +14,9 @@ class BasketItem extends React.Component {
   } 
   
   handleRemoveItem() {
-    // console.error(this.state.quantity);
     return (e) => {
       e.preventDefault();
-      // this.props.action();
-      this.props.deleteBasketItem(this.props.basketId);
-      this.setState({id: this.props.basketId})
-      // .then(this.props.fetchBasketItems());
+      this.props.deleteBasketItem(this.state.id);
     };
   }
   
@@ -33,8 +29,6 @@ class BasketItem extends React.Component {
   }
   
   handleQuantity() {
-    console.error(this.state.id)
-    console.warn(this.props.basketId)
     return (e) => {
       this.setState({ quantity: e.target.value }, () => this.props.updateBasketItem(this.state));
     }
@@ -75,7 +69,7 @@ class BasketItem extends React.Component {
           <div className="basket-one-product-quantity-price-buttons">
             <div className="basket-one-product-quantity-price">
               <div className="basket-one-product-quantity">
-                <select id="number-of-quantity-in-basket" value={ this.state.quantity } onChange={ this.handleQuantity() }>
+                <select id="number-of-quantity-in-basket" value={ quantity } onChange={ this.handleQuantity() }>
                   { this.getQuantities() }
                 </select>
               </div>

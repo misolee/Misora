@@ -5,13 +5,6 @@ import { Link } from 'react-router-dom';
 class Basket extends React.Component {
   constructor(props) {
     super(props);
-
-    // // Set some state
-    // this.state = {
-    //   messageShown: this.props.basketItems
-    // };
-
-    // this.handler = this.handler.bind(this);
   }
 
   componentDidMount() {
@@ -19,12 +12,6 @@ class Basket extends React.Component {
     this.props.fetchBrands();
     this.props.fetchBasketItems();
   }
-
-  // handler() {
-  //   this.props.fetchProducts();
-  //   this.props.fetchBrands();
-  //   this.props.fetchBasketItems();
-  // }
 
   render() {
     let brands = this.props.brands;
@@ -34,13 +21,12 @@ class Basket extends React.Component {
         product={ this.props.products[item.productId] }
         productId={ item.productId }
         basketId={ item.id }
-        key={i}
+        key={ i }
         color={ item.color }
         quantity={ item.quantity }
         brands={ brands }
         deleteBasketItem={ this.props.deleteBasketItem } 
         updateBasketItem={ this.props.updateBasketItem }
-        // action={ this.handler }
         />
       )
     });
@@ -63,7 +49,6 @@ class Basket extends React.Component {
       totalPrice = 0;
       shippingText = "Your basket is empty";
     }  
-    // let error = this.props.errors.map((error, i) => <div key={i} >{ error }</div>);
 
     let shipping = "$5.99";
     if (subtotal > 50) shipping = "FREE";
