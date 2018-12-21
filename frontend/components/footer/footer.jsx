@@ -61,8 +61,8 @@ class Footer extends React.Component {
 					</div>
 					<div className="very-bottom">
 						<div className="footer-icons">
-							<a href="https://github.com/misolee/Misora"><i id="footer-icon" className="fab fa-github"></i></a>
-							<a href="https://www.linkedin.com/in/miso-lee-872836149/"><i id="footer-icon" className="fab fa-linkedin"></i></a>
+							<a href="https://github.com/misolee/Misora" target="_blank"><i id="footer-icon" className="fab fa-github"></i></a>
+							<a href="https://www.linkedin.com/in/miso-lee-872836149/" target="_blank"><i id="footer-icon" className="fab fa-linkedin"></i></a>
 						</div>
 					</div>
 				</div>

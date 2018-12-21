@@ -3,13 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Header = (props) => {
 
-  const bagIcons = (
-    <div className="bagIcons">
-      <i className="fas fa-heart" />
-      <i className="fas fa-shopping-bag" />
-    </div>
-  );
-
   const welcomeMessage = props.currentUser ? (
     <div className="welcomeMessageWithButton">
       <h3 className="welcomeMessage"> Hi, {
@@ -61,9 +54,12 @@ const Header = (props) => {
         <div className="middle-break" />
         <div className="middle-break2" />
       </div>
-      <Link to='/basket'>
-        { bagIcons }
-      </Link>
+        <div className="bagIcons">
+          <i className="fas fa-heart" />
+          <Link to='/basket'>
+            <i className="fas fa-shopping-bag" />
+          </Link>
+        </div>
     </div>
   );
 }
