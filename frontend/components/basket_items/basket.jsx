@@ -17,26 +17,75 @@ class Basket extends React.Component {
     return (e) => {
       e.preventDefault();
       this.props.deleteAllBasketItems(this.props.itemsToBeDeleted);
+      this.props.openModal('checkout');
+    };
+  }
+
+  handleSignInClick() {
+    return (e) => {
+      this.props.openModal('login');
+    };
+  }
+
+  handleRegisterClick() {
+    return(e) => {
+      this.props.openModal('signup');
     };
   }
 
   render() {
+    // if (!currentUser) return null;
     let brands = this.props.brands;
-    let products = this.props.basketItems.map((item) => {
-      return (
-        <BasketItem 
-        product={ this.props.products[item.productId] }
-        productId={ item.productId }
-        basketId={ item.id }
-        key={ item.id }
-        color={ item.color }
-        quantity={ item.quantity }
-        brands={ brands }
-        deleteBasketItem={ this.props.deleteBasketItem } 
-        updateBasketItem={ this.props.updateBasketItem }
-        />
+    let products;
+
+    if (this.props.currentUserId) {
+      if (this.props.basketItems.length === 0) {
+        products = (
+          <div className="empty-basket">
+            <div className="basket-is-empty">
+              Your basket is currently empty.
+            </div>
+            <div className="basket-shop">
+              <Link to='/products'>
+                <button>SHOP</button>
+              </Link>
+            </div>
+          </div>
+        )
+      } else {
+        products = (   
+          this.props.basketItems.map((item) => {
+            return (
+              <BasketItem 
+              product={ this.props.products[item.productId] }
+              productId={ item.productId }
+              basketId={ item.id }
+              key={ item.id }
+              color={ item.color }
+              quantity={ item.quantity }
+              brands={ brands }
+              deleteBasketItem={ this.props.deleteBasketItem } 
+              updateBasketItem={ this.props.updateBasketItem }
+              />
+            )
+          })
+        );
+      }
+    } else {
+      products = (
+        <div className="basket-please-login">
+          <div className="please-signin-or-register-to-checkout">
+            Please Sign In or Register to checkout
+          </div>
+          <div className="signin-or-register">
+            <button onClick={ this.handleSignInClick() }>Sign In</button>
+            <button onClick={ this.handleRegisterClick() }>Register</button>          
+          </div>
+        </div>
       )
-    });
+    }
+    
+    
 
     let subtotal = 0;
     let totalQuantity = 0;

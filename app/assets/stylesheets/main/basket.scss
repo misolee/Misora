@@ -157,3 +157,77 @@
     }
   }
 }
+
+.empty-basket {
+  min-height: 140px;
+  font-family: $Arimo;
+  letter-spacing: 0.5px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  .basket-is-empty {
+    display: flex;
+    flex: 2;
+    font-weight: bold;
+    font-size: 17px;
+    padding-top: 30px;
+  }
+
+  .basket-shop {
+    flex: 2;
+    margin: 0 auto;
+    text-align: center;
+
+    button {
+      background-color: $darkPink;
+      color: white;
+      height: 38px;
+      width: 160px;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: $pink;
+    }
+  }
+}
+
+.basket-please-login {
+  min-height: 140px;
+  font-family: $Arimo;
+  letter-spacing: 0.5px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+
+  .please-signin-or-register-to-checkout {
+    display: flex;
+    flex: 2;
+    font-weight: bold;
+    font-size: 17px;
+    padding-top: 30px;
+    margin: 0 auto;
+  }
+
+  .signin-or-register {
+    display: flex;
+    padding-bottom: 25px;
+
+    button {
+      background-color: $darkPink;
+      color: white;
+      height: 38px;
+      width: 160px;
+      border-radius: 5px;
+      margin: 0 5px;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: $pink;
+    }
+  }
+}

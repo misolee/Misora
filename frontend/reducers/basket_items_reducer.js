@@ -11,7 +11,7 @@ export default (state = {}, action) => {
         return {};
       } else {
         return action.currentUser.basketItems;
-      }
+      };
     case RECEIVE_ALL_BASKET_ITEMS:
       newState = merge({}, state, action.basketItems);
       return action.basketItems;

@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Home from './home';
-import LogInSignUpModal from "./modal/login_signup_modal";
+import Modal from "./modal/modal";
 import NavBar from "./header/navbar_container";
 import UnderNavBar from "./header/under_navbar";
 import Footer from "./footer/footer_container";
@@ -19,7 +19,7 @@ const App = () => (
 	<div className="page">
 		<NavBar />
 		<UnderNavBar />
-		<LogInSignUpModal />
+		<Modal />
 		<Switch>
 			<Route exact path={ "/" } component={ Home } />
 			<Route exact path={ "/products" } component={ AllProducts } />

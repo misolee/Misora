@@ -8,7 +8,7 @@ const mstp = (state) => {
   return ({
     formType: 'login',
     errors: state.errors.session,
-    modal: state.ui.modal,
+    modal: state.ui.modal
   });
 };
 

@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 import { closeModal } from "../../actions/modal_actions";
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
+import CheckoutContainer from '../basket_items/checkout_modal_container';
 
-function LoginSignupModal({ modal, closeModal }) {
+function Modal({ modal, closeModal }) {
   if (!modal) {
     return null;
   }
@@ -17,12 +18,15 @@ function LoginSignupModal({ modal, closeModal }) {
     case 'signup':
       component = <SignupFormContainer />;
       break;
+    case 'checkout':
+      component = <CheckoutContainer />;
+      break;
     default:
       return null;
   }
 
   return (
-    <div className="outsideSigninSignup" onClick={closeModal}>
+    <div className="outsideModal" onClick={ closeModal }>
       { component }
     </div>
   );
@@ -40,4 +44,4 @@ const mdtp = (dispatch) => {
   });
 };
 
-export default connect(mstp, mdtp)(LoginSignupModal);
+export default connect(mstp, mdtp)(Modal);
