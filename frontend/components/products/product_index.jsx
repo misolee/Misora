@@ -4,6 +4,10 @@ import cloneDeep from "lodash/cloneDeep";
 import ProductIndexItem from "./product_index_item";
 
 class AllProductIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { filter : "all" };
+  }
   componentDidMount() {
     this.props.fetchProducts();
     this.props.fetchBrands();
@@ -11,6 +15,13 @@ class AllProductIndex extends React.Component {
 
   componentWillUnmount() {
     window.scrollTo(0,0);
+  }
+
+  filter(field) {
+    return (e) => {
+      e.preventDefault();
+      this.setState({filter : field});
+    }
   }
 
   getRandomItems(products, count, brands) {
@@ -25,10 +36,15 @@ class AllProductIndex extends React.Component {
       result = result.concat(clonedProducts.splice(index, 1));
     }
 
-    return result.map((product, i) =>
-      <div key={i} className="all-products-list-one-item">
-        <ProductIndexItem key={ product.id } product={ product } brand={ brands[product.brandId] } />
-      </div>
+    if (this.state.filter !== "all") result = result.filter((product) => product.category === this.state.filter);
+
+    return result.map((product, i) => {
+        return (
+          <div key={i} className="all-products-list-one-item">
+            <ProductIndexItem key={ product.id } product={ product } brand={ brands[product.brandId] } />
+          </div>
+        );
+      }
     );
   }
 
@@ -51,7 +67,7 @@ class AllProductIndex extends React.Component {
 
     let categories = categoryArr.map((category) => 
       // <Link to={`/products/${this.props.bigCategory}/${category}`}>
-        <div className="product-index-category">{ category }</div>
+        <div key={category} onClick={this.filter(category)} className="product-index-category">{ category }</div>
       // </Link>
     )
     
