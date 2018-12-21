@@ -13,6 +13,13 @@ class Basket extends React.Component {
     this.props.fetchBasketItems();
   }
 
+  handleSubmit() {
+    return (e) => {
+      e.preventDefault();
+      this.props.deleteAllBasketItems(this.props.itemsToBeDeleted);
+    };
+  }
+
   render() {
     let brands = this.props.brands;
     let products = this.props.basketItems.map((item) => {
@@ -99,7 +106,7 @@ class Basket extends React.Component {
                   ${ totalPrice.toFixed(2) }
                 </div>
               </div>
-              <button className="checkout">CHECKOUT</button>
+              <button className="checkout" onClick={ this.handleSubmit() }>CHECKOUT</button>
             </div>
           </div>
         </div>

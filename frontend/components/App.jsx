@@ -13,7 +13,7 @@ import AllHair from "./products/hair_container";
 import AllBathandBody from "./products/bath_and_body_container";
 import AllFragrance from "./products/fragrance_container";
 import ProductShow from "./products/product_show/product_show_container";
-import Basket from "./basketItems/basket_container";
+import Basket from "./basket_items/basket_container";
 
 const App = () => (
 	<div className="page">

@@ -47,14 +47,16 @@ class Api::BasketItemsController < ApplicationController
   end
 
   def destroy
+    @basket_items = BasketItem.where(user_id: current_user.id)
     @basket_item = BasketItem.find(params[:id])
     @basket_item.destroy
     render :show
   end
 
   def destroy_all
-    @basket_items = BasketItems.where(user_id: current_user.id)
-    @basket_items.destroy
+    @basket_items = BasketItem.where(user_id: current_user.id)
+    
+    @basket_items.destroy_all
     render :index
   end
   

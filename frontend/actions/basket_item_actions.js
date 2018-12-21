@@ -3,6 +3,7 @@ import * as basketItemUtils from '../util/basket_item_api_util';
 export const RECEIVE_ALL_BASKET_ITEMS = 'RECEIVE_ALL_BASKET_ITEMS';
 export const REMOVE_BASKET_ITEM = 'REMOVE_BASKET_ITEM';
 export const RECEIVE_BASKET_ITEMS_ERRORS = 'RECEIVE_BASKET_ITEMS_ERRORS';
+export const DELETE_ALL_BASKET_ITEMS = 'DELETE_ALL_BASKET_ITEMS';
 
 const receiveAllBasketItems = (basketItems) => (
   ({
@@ -22,6 +23,12 @@ const receiveBasketItemsErrors = (errors) => (
   ({
     type: RECEIVE_BASKET_ITEMS_ERRORS,
     errors
+  })
+);
+
+const deleteBasketItems = () => (
+  ({
+    type: DELETE_ALL_BASKET_ITEMS,
   })
 );
 
@@ -46,3 +53,9 @@ export const deleteBasketItem = (id) => (dispatch) => (
   basketItemUtils.deleteBasketItem(id)
   .then((basketItemId) => dispatch(removeBasketItem(basketItemId)))
 );
+
+export const deleteAllBasketItems = (basketItems) => (dispatch) => (
+  basketItemUtils.deleteAllBasketItems(basketItems)
+  .then(() => dispatch(deleteBasketItems()))
+);
+

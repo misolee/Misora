@@ -26,3 +26,11 @@ export const deleteBasketItem = (id) => (
     url: `api/basket_items/${id}`
   })
 );
+
+export const deleteAllBasketItems = (basket_items) => (
+  $.ajax({
+    method: 'DELETE',
+    url: 'api/basket_items',
+    data: { basket_items }
+  })
+);

@@ -20,12 +20,6 @@ class BasketItem extends React.Component {
     };
   }
   
-  // handleState() {
-  //   this.setState(this.props);
-  //   console.warn(this.state)
-  //   console.error(this.props)
-  // }
-  
   getQuantities() {
     let result = [];
     for (let i = 1; i < 11; i++) {

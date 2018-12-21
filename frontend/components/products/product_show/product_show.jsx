@@ -58,7 +58,7 @@ class ProductShow extends React.Component {
 	handleSubmit() {
 		return () => {
 			this.props.createBasketItem(this.state)
-			.then(null, () => setTimeout(this.props.clearErrors, 2000));
+			.then(null, () => setTimeout(this.props.clearErrors, 3000));
 			this.addedToBasket();
 		}
 	}
