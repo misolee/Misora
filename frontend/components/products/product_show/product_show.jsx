@@ -14,7 +14,7 @@ class ProductShow extends React.Component {
 	}
   
   componentDidMount() {
-    let productId = this.props.productId;
+		let productId = this.props.productId;
     this.props.fetchProduct(productId)
 			.then((res) => {
 				this.props.fetchBrand(res.product.brandId);
