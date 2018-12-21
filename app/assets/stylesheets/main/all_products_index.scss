@@ -58,9 +58,38 @@
 }
 
 .all-product-left-navbar {
+  display: flex;
+  flex-direction: column;
   flex: 1;
-  // border: 1px solid blue;
+  border-top: 2px solid $lightGray;
   width: 200px;
+  margin-right: 20px;
+  display: flex;
+  align-self: flex-start;
+  color: $darkGray;
+
+  .category-empty-div {
+    height: 2px;
+    background-color: $lightGray;
+    margin-top: 10px;
+    width: auto;
+  }
+
+  .product-left-navbar-categories {
+    padding: 10px;
+    font-size: 14px;
+
+    .product-index-category {
+      padding: 10px 0;
+    }
+
+    .product-index-category:hover {
+      text-decoration: underline;
+      color: $darkPink;
+      cursor: pointer;
+    }
+  }
+
 }
 
 .all-products-list {

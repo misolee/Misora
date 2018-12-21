@@ -9,7 +9,8 @@ const mstp = (state) => {
 
   return ({
     products: allHairProducts(state),
-    brands
+    brands,
+    bigCategory: "hair"
   });
 };
 

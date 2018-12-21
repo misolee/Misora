@@ -9,7 +9,8 @@ const mstp = (state) => {
 
   return ({
     products: allSkincareProducts(state),
-    brands
+    brands,
+    bigCategory: "skincare"
   });
 };
 

@@ -25,6 +25,7 @@ class CheckoutModal extends React.Component {
           <a href="https://github.com/misolee/Misora" target="_blank"><i id="footer-icon" className="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/miso-lee-872836149/" target="_blank"><i id="footer-icon" className="fab fa-linkedin"></i></a>
         </div>
+        <div className="created-by">Created by Miso Lee</div>
       </div>
     )
   }

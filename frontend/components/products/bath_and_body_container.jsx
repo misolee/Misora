@@ -9,7 +9,8 @@ const mstp = (state) => {
 
   return ({
     products: allBathandBodyProducts(state),
-    brands
+    brands,
+    bigCategory: "bath&body"
   });
 };
 

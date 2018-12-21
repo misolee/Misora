@@ -9,7 +9,8 @@ const mstp = (state) => {
 
   return ({
     products: allFragranceProducts(state),
-    brands
+    brands,
+    bigCategory: "fragrance"
   });
 };
 

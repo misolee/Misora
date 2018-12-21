@@ -52,13 +52,13 @@ class ProductShow extends React.Component {
 	addedToBasket() {
 		let divEl = document.getElementsByClassName("quantity-added-to-basket");
 		divEl[0].style.display = 'block';
-		setTimeout(() => divEl[0].style.display = 'none', 3000)
+		setTimeout(() => divEl[0].style.display = 'none', 2000)
 	}
 	
 	handleSubmit() {
 		return () => {
 			this.props.createBasketItem(this.state)
-			.then(null, () => setTimeout(this.props.clearErrors, 3000));
+			.then(null, () => setTimeout(this.props.clearErrors, 2000));
 			this.addedToBasket();
 		}
 	}
