@@ -15,7 +15,7 @@
   flex-direction: column;
   justify-content: space-around;
   flex: 4;
-  border-left: 1px solid $lightGray;
+  align-self: flex-start;
 }
 
 .all-index-product-info {
@@ -62,9 +62,9 @@
   flex-direction: column;
   flex: 1;
   border-top: 2px solid $lightGray;
+  // border-right: 1px solid $lightGray;
   width: 200px;
   margin-right: 20px;
-  display: flex;
   align-self: flex-start;
   color: $darkGray;
 
@@ -76,7 +76,7 @@
   }
 
   .product-left-navbar-categories {
-    padding: 10px;
+    padding: 10px 30px 10px 10px;
     font-size: 14px;
 
     .product-index-category {

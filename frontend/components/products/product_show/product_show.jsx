@@ -18,7 +18,11 @@ class ProductShow extends React.Component {
     this.props.fetchProduct(productId)
 			.then((res) => {
 				this.props.fetchBrand(res.product.brandId);
-				this.setState({color: this.props.product.color[0]});
+				if (this.props.product.color) {
+					this.setState({color: this.props.product.color[0]});
+				} else {
+					this.setState({ color: 'none' });
+				}
 			});
 		this.props.fetchBasketItems();
   }

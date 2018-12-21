@@ -79,10 +79,10 @@ class AllProductIndex extends React.Component {
 						</div>
 					</div>
 				<div className="all-product-index">
-					<div className="product-count">
-						<p>{products.length} products</p>
-					</div>
-					<div className="all-products-list">{products}</div>
+          <div className="product-count">
+            <p>{products.length} products</p>
+          </div>
+          <div className="all-products-list">{products}</div>
 				</div>
 			</div>
     )
