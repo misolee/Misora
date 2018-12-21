@@ -62,7 +62,6 @@
   flex-direction: column;
   flex: 1;
   border-top: 2px solid $lightGray;
-  // border-right: 1px solid $lightGray;
   width: 200px;
   margin-right: 20px;
   align-self: flex-start;
@@ -76,7 +75,7 @@
   }
 
   .product-left-navbar-categories {
-    padding: 10px 30px 10px 10px;
+    padding: 10px;
     font-size: 14px;
 
     .product-index-category {
