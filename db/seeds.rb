@@ -942,7 +942,7 @@ lancome_tonique_douceur_softening_hydrating_toner_with_rose_water = Product.crea
 
 
 peter_thomas_roth_8_glycolic_solutions_toner = Product.create!(
-  name: '8% Glycolic Solutions Toner',
+  name: '8 percent Glycolic Solutions Toner',
   size: '5 oz/ 150 mL',
   price: 40.00,
   category: 'Toners',
