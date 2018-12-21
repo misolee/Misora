@@ -112,6 +112,7 @@
         
         .limit-to-basket {
           padding-left: 17px;
+          padding-top: 10px;
           padding-bottom: 10px;
           display: block;
           max-width: 225px;
@@ -134,6 +135,7 @@
             height: 38px;
             font-weight: bold;
             justify-content: center;
+            transition: 0.25s;
           }
 
           #add-to-loves:hover {
@@ -217,8 +219,8 @@
           height: 38px;
           font-weight: bold;
           justify-content: center;
-          margin-bottom: 10px;
           padding: 1px;
+          transition: 0.25s;
         }
     
         #add-to-basket:hover {

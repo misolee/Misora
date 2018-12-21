@@ -41,6 +41,10 @@
         margin-top: 5px;
       }
 
+      .link-back-to-details {
+        transition: 0.25s;
+      }
+
       .link-back-to-details:hover {
         color: $darkPink;
         text-decoration: underline;
@@ -96,6 +100,7 @@
         .basket-one-product-remove-button {
           padding-right: 10px;
           border-right: 1px solid $lightGray;
+          transition: 0.25s; 
 
           button:hover {
             cursor: pointer;
@@ -105,6 +110,7 @@
 
         .basket-one-product-move-to-loves {
           padding-left: 10px;
+          transition: 0.25s;
 
           button:hover {
             cursor: pointer;

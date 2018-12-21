@@ -2,7 +2,66 @@
 
 .checkout-modal {
   display: flex;
+  flex-direction: column;
   width: 500px;
-  height: 500px;
+  height: 505px;
   background-color: white;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-family: $Arimo;
+  letter-spacing: 0.5px;
+  text-align: center;
+
+  .checkout-modal-logo {
+   background: image-url('logopink.png');
+   background-size: 170px;
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 100px;
+   min-width: 384.78px;
+  }
+
+  .thankyou-for-purchase {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    .thankyou {
+      color: $darkPink;
+      font-size: 56px;
+      font-weight: bold;
+    }
+
+    .for-your-purchase {
+      color: $darkGray;
+      font-family: $Cormorant-Garamond;
+      font-size: 35px;
+    }
+  }
+
+  .faithful-clone {
+    padding: 60px;
+    font-size: 20px;
+    font-family: $Cormorant-Garamond;
+  }
+
+  .visit-my-links {
+    font-size: 20px;
+  }
+
+  .checkout-modal-links {
+    color: $pink;
+    transition: 0.25s;
+    font-size: 70px;
+    padding: 25px;
+
+    a {
+      padding: 0 30px;
+    }
+
+    :hover {
+      color: $darkPink;
+    }
+  }
+
 }

@@ -44,9 +44,10 @@
     cursor: pointer;
     background-color: white;
     font-family: $Arimo;
-  letter-spacing: 0.5px;
+    letter-spacing: 0.5px;
     font-size: 23px;
     border: none;
+    transition: 0.25s;
   }
 
   button.pleasesignin:hover {
@@ -242,6 +243,7 @@ input[type="password"]:focus {
   color: $darkPink;
   font-weight: bold;
   margin-top: -10px;
+  transition: 0.25s;
   margin-bottom: -5px;
 
   :hover {
@@ -254,6 +256,7 @@ input[type="password"]:focus {
     width: 150px;
     height: 38px;
     margin-right: 30px;
+    transition: 0.25s;
   }
 
   button.cancel-button:hover {
@@ -268,6 +271,7 @@ input[type="password"]:focus {
     border: 1px solid $darkPink;
     width: 150px;
     height: 38px;
+    transition: 0.25s;
   }
 
   button.continue-button:hover {

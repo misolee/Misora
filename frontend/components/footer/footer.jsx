@@ -18,7 +18,7 @@ class Footer extends React.Component {
 						</div>
 					</div>
 					<div>
-						<div className="footer-label">My Sephora</div>
+						<div className="footer-label">My Misora</div>
 						<div className="footer-links">
 							<div>My Account</div>
 							<div>Order Status</div>
@@ -66,11 +66,11 @@ class Footer extends React.Component {
 						</div>
 					</div>
 				</div>
-				<div>
+				<div className="misora-copyright">
 					Copyright © 2018 Misora USA, Inc. All rights reserved. Terms of
 					Use | Privacy Policy - REVISED
 				</div>
-				<div>
+				<div className="phone-number">
 					1 818 Misora (1 818 181 8181) | TTY (1 818 181 8181)
 				</div>
 			</div>

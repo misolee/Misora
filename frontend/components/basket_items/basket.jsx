@@ -35,12 +35,12 @@ class Basket extends React.Component {
 
   render() {
     // if (!currentUser) return null;
-    let brands = this.props.brands;
-    let products;
+    let { brands, currentUserId, basketItems, products, deleteBasketItem, updateBasketItem } = this.props;
+    let productsInBasket;
 
-    if (this.props.currentUserId) {
-      if (this.props.basketItems.length === 0) {
-        products = (
+    if (currentUserId) {
+      if (basketItems.length === 0) {
+        productsInBasket = (
           <div className="empty-basket">
             <div className="basket-is-empty">
               Your basket is currently empty.
@@ -53,26 +53,26 @@ class Basket extends React.Component {
           </div>
         )
       } else {
-        products = (   
-          this.props.basketItems.map((item) => {
+        productsInBasket = (   
+          basketItems.map((item) => {
             return (
               <BasketItem 
-              product={ this.props.products[item.productId] }
+              product={ products[item.productId] }
               productId={ item.productId }
               basketId={ item.id }
               key={ item.id }
               color={ item.color }
               quantity={ item.quantity }
               brands={ brands }
-              deleteBasketItem={ this.props.deleteBasketItem } 
-              updateBasketItem={ this.props.updateBasketItem }
+              deleteBasketItem={ deleteBasketItem } 
+              updateBasketItem={ updateBasketItem }
               />
             )
           })
         );
       }
     } else {
-      products = (
+      productsInBasket = (
         <div className="basket-please-login">
           <div className="please-signin-or-register-to-checkout">
             Please Sign In or Register to checkout
@@ -85,13 +85,11 @@ class Basket extends React.Component {
       )
     }
     
-    
-
     let subtotal = 0;
     let totalQuantity = 0;
-    this.props.basketItems.forEach((item) => {
-      if (!(this.props.products[item.productId])) return null;
-      subtotal += this.props.products[item.productId].price * item.quantity;
+    basketItems.forEach((item) => {
+      if (!(products[item.productId])) return null;
+      subtotal += products[item.productId].price * item.quantity;
       totalQuantity += item.quantity;
     });
 
@@ -110,7 +108,13 @@ class Basket extends React.Component {
     if (subtotal > 50) shipping = "FREE";
     if (subtotal === 0) shipping = "$"+((0).toFixed(2));
 
-          
+    let checkoutButton;
+    if (currentUserId && basketItems.length === 0 || !currentUserId) {
+      null;
+    } else {
+      checkoutButton = <button className="checkout" onClick={this.handleSubmit()}>CHECKOUT</button>
+    }
+    
     return(
       <div className="basket-page">
         <div className="my-basket">My Basket</div>
@@ -124,7 +128,7 @@ class Basket extends React.Component {
           <div className="basket-product-details-and-numbers">
             <div className="items-in-basket">Items in basket ({ totalQuantity })</div>
             <div className="basket-product-details-list">
-              { products }
+              { productsInBasket }
             </div>
           </div>
           <div className="basket-total-price">
@@ -155,7 +159,7 @@ class Basket extends React.Component {
                   ${ totalPrice.toFixed(2) }
                 </div>
               </div>
-              <button className="checkout" onClick={ this.handleSubmit() }>CHECKOUT</button>
+              { checkoutButton }
             </div>
           </div>
         </div>

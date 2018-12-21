@@ -30,6 +30,7 @@
 
     div {
       padding: 5px 0;
+      transition: 0.25s;
     }
 
     div:hover {
@@ -57,6 +58,12 @@
 
       .footer-signup-for-email {
         align-items: center;
+        padding-top: 10px;
+      }
+
+      .footer-email-input {
+        margin-left: 15px;
+        width: 260px;
       }
   
       input {
@@ -98,6 +105,18 @@
     font-size: 50px;
     color: white;
     margin-left: 50px;
+    transition: 0.25s;
+  }
+
+  #footer-icon:hover {
+    color: $darkPink;
   }
 }
 
+.misora-copyright {
+  margin-top: 20px;
+}
+
+.phone-number {
+  margin-top: 10px;
+}
