@@ -97,7 +97,7 @@ class Basket extends React.Component {
     let totalPrice = subtotal + tax;
     let shippingText = "You now qualify for free shipping!";
     
-    if (totalPrice < 50) shippingText = `Only $${ (50 - totalPrice).toFixed(2) } away until FREE SHIPPING!`;
+    if (totalPrice < 50) shippingText = `Only $${ (50 - subtotal).toFixed(2) } away until FREE SHIPPING!`;
     if (totalPrice < 50) totalPrice += 5.99;
     if (totalPrice === 5.99) {
       totalPrice = 0;
@@ -105,7 +105,7 @@ class Basket extends React.Component {
     }  
 
     let shipping = "$5.99";
-    if (subtotal > 50) shipping = "FREE";
+    if (subtotal >= 50) shipping = "FREE";
     if (subtotal === 0) shipping = "$"+((0).toFixed(2));
 
     let checkoutButton;
