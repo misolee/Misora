@@ -6,16 +6,12 @@ Live Site [here](http://misora.herokuapp.com/#/)!
 
 ![mainpage](./app/assets/images/readme/main-page.png)
 
-#
-
 ## Technologies used
 
 * Ruby on Rails
 * PostgreSQL
 * React
 * Redux
-
-#
 
 ## Functionality
 
