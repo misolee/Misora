@@ -8,11 +8,13 @@ const mstp = (state, ownProps) => {
   let productId = ownProps.match.params.productId;
   let product = state.entities.products[productId];
   let brands = state.entities.brands;
+  let errors = state.errors.reviews;
 
   return ({
     productId,
     product,
-    brands
+    brands,
+    errors
   });
 };
 

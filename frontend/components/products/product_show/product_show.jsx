@@ -151,7 +151,7 @@ class ProductShow extends React.Component {
 					<div className="ratings-and-reviews">
 						Ratings & Reviews
 					</div>
-					<Link className="add-review-link" to={`/addReview/${product.id}`} >Add Review</Link>
+					<Link className="add-review-link" to={`/addReview/${product.id}`}>Add Review</Link>
 					<ReviewsIndex reviews={ reviews }/>
 				</div>
 			</div>

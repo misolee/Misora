@@ -20,4 +20,5 @@ class Review < ApplicationRecord
   belongs_to :product
 
   validates :user_id, :product_id, :rating, :reviews, :recommend, presence: true
+  validates :reviews, length: { minimum: 20 }
 end

@@ -18,6 +18,7 @@ class ReviewForm extends React.Component {
       .then((res) => {
         this.props.fetchBrand(res.product.brandId);
       });
+    window.scrollTo(0, 0);
   }
 
   update(field) {
@@ -27,10 +28,13 @@ class ReviewForm extends React.Component {
   }
 
   handleSubmit() {
+    let { errors, product, history } = this.props;
     return (e) => {
       e.preventDefault();
       this.props.createReview(this.state);
-      this.props.history.push(`/products/${this.props.product.name}~${this.props.product.id}`);
+      if (!errors) {
+        history.push(`/products/${product.name}~${product.id}`);
+      }
     };
   }
 
@@ -46,10 +50,10 @@ class ReviewForm extends React.Component {
   }
 
   render() {
-    let { product, brands } = this.props;
+    let { product, brands, errors } = this.props;
     let { reviews, headline } = this.state;
     if (!this.props.product || !this.props.brands[product.brandId]) return null;
-    console.warn(this.state);
+    errors = errors.map((error, i) => <div key={i}>{ error }</div>);
 
     return(
       <form className="review-form">
@@ -61,14 +65,18 @@ class ReviewForm extends React.Component {
             <img className="all-index-one-product-image" src={ product.photoUrls[0] } />
           </div>
           <div className="review-form-product-info">
-            <div className="review-form-label">
-              { brands[product.brandId].name }
-            </div>
-            <div className="review-form-product-name">
-              { product.name }
-            </div>
+            {/* <Link> */}
+              <div className="review-form-brand-product-name">
+                <div className="review-form-brand-label">
+                  { brands[product.brandId].name }
+                </div>
+                <div className="review-form-product-name">
+                  { product.name }
+                </div>
+              </div>
+            {/* </Link> */}
             <div className="review-form-rating">
-              <div className="review-form-label">
+              <div className="review-form-label-rate-product">
                 Rate this product
               </div>
               <div className="review-form-hearts">
@@ -78,19 +86,22 @@ class ReviewForm extends React.Component {
                 <i id="rating-heart" className="fas fa-heart" onClick={ this.handleRatingClick(4) }></i>
                 <i id="rating-heart" className="fas fa-heart" onClick={ this.handleRatingClick(5) }></i>
               </div>
-              <div className="review-form-label">
+              <div className="review-form-review-label">
                 Review
               </div>
-              <textarea className="review-form-textarea" value={ reviews } onChange={ this.update("reviews") } minLength="20" />
-              <div>
+              <textarea className="review-form-textarea" value={ reviews } onChange={ this.update("reviews") } minLength="20" placeholder="write your review" />
+              <div className="review-form-textarea-minch">
                 Min. 20 characters
               </div>
-              <div className="review-form-label">
+              <div className="review-form-headline-label">
                 Headline (optional)
               </div>
-              <input className="headline-input" type="text" value={ headline } onChange={ this.update("headline") } maxLength="50"/>
+              <input className="headline-input" type="text" value={ headline } onChange={ this.update("headline") } maxLength="50" placeholder="Add a headline" />
+              <div className="review-form-textarea-minch">
+                Max. 50 characters
+              </div>
               <div className="recommendation">
-                <div className="review-form-label">
+                <div className="review-form-would-recommend-label">
                   Would you recommend this product?
                 </div>
                 <div className="recommend-buttons">
@@ -98,7 +109,12 @@ class ReviewForm extends React.Component {
                   <button onClick={ this.handleRecommend("no") }>No</button>
                 </div>
               </div>
-              <button className="add-review-button" onClick={ this.handleSubmit() }>Add Review</button>
+              <div className="review-form-button-errors">
+                <button className="add-review-button" onClick={ this.handleSubmit() }>Add Review</button>
+                <div className="review-form-errors">
+                  { errors }
+                </div>
+              </div>
             </div>
           </div>
         </div>

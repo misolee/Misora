@@ -6,7 +6,7 @@ class ReviewIndexItem extends React.Component {
     let { recommend } = this.props.review;
 
     if (recommend === "true")  {
-      return <div><i className="fas fa-check"></i> Recommends this product</div>
+      return <div className="review-index-item-recommend"><i className="fas fa-check"></i> Recommends this product</div>
     } else if (recommend === "false") {
       return <div></div>
     }
@@ -40,18 +40,33 @@ class ReviewIndexItem extends React.Component {
     let { headline, reviews } =  this.props.review;
 
     return (
-      <div>
-        <div className="heart-rating">
-          <i className="fas fa-heart"></i>
-          <i className="fas fa-heart"></i>
-          <i className="fas fa-heart"></i>
-          <i className="fas fa-heart"></i>
-          <i className="fas fa-heart"></i>
+      <div className="review-index-item">
+        <div className="review-index-item-user-profile">
+          <i className="far fa-kiss-wink-heart"></i>
         </div>
-        { this.date() }
-        { headline }
-        { reviews }
-        { this.recommend() }
+        <div className="review-index-item-rating">
+          <div className="rating-date">
+            <div className="heart-rating">
+              <i className="fas fa-heart"></i>
+              <i className="fas fa-heart"></i>
+              <i className="fas fa-heart"></i>
+              <i className="fas fa-heart"></i>
+              <i className="fas fa-heart"></i>
+            </div>
+            <div className="review-index-item-date">
+              { this.date() }
+            </div>
+          </div>
+          <div className="review-index-item-headline">
+            { headline }
+          </div>
+          <div>
+            { reviews }
+          </div>
+          <div className="">
+            { this.recommend() }
+          </div>
+        </div>
       </div>
     )
   }

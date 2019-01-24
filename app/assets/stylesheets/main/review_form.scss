@@ -15,29 +15,59 @@
 
   .review-form-label-title {
     font-size: 30px;
+    padding: 30px 0;
+    border-bottom: 1px solid $lightGray;
   }
 
   .review-form-with-image {
     display: flex;
     text-align: left;
+    padding: 30px 100px 30px 0;
 
     .review-form-product-image {
       flex: 1;
+      justify-content: center;
+      display: flex;
+      padding-top: 50px;
 
       img {
-        height: 300px;
-        width: 300px;
+        height: 250px;
+        width: 250px;
       }
     }
 
     .review-form-product-info {
       flex: 1;
+
+      .review-form-brand-product-name {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $lightGray;
+
+        .review-form-brand-label {
+          font-weight: bold;
+          font-size: 17px;
+        }
+
+        .review-form-product-name {
+          font-size: 14px;
+        }
+      }
     }
 
     .review-form-rating {
 
+      .review-form-label-rate-product {
+        padding: 20px 0;
+        font-weight: bold;
+        font-size: 15px;
+      }
+
       .review-form-hearts {
         display: flex;
+        padding-bottom: 20px;
+        font-size: 25px;
 
         #rating-heart {
           color: $pink;
@@ -53,41 +83,116 @@
         }
       }
 
+      .review-form-review-label {
+        font-weight: bold;
+        font-size: 14px;
+        padding-bottom: 20px;
+      }
+
       .review-form-textarea {
         border-radius: 10px;
         resize: none;
+        border: 1px solid $lightGray;
+        width: 90%;
+        height: 80px;
+        padding: 20px;
+        font-size: 14px;
+        color: $darkGray;
+      }
+
+      .review-form-textarea:focus {
+        border: 1px solid $darkGray;
+        color: $darkGray;
+      }
+
+      .review-form-textarea-minch {
+        font-size: 13px;
+        padding: 5px 10px;
+        text-align: end;
+      }
+
+      .review-form-headline-label {
+        font-weight: bold;
+        font-size: 14px;
+        padding: 20px 0;
       }
 
       .headline-input {
-        border: 1px solid red;
+        border: 1px solid $lightGray;
+        width: 90%;
+        border-radius: 8px;
+        height: 30px;
+        padding: 0 20px;
+        font-size: 14px;
+        color: $darkGray;
+      }
+
+      .headline-input:focus {
+        border: 1px solid $darkGray;
+        color: $darkGray;
       }
 
       .recommendation {
         display: flex;
         flex-direction: column;
+        border-top: 1px solid $lightGray;
+        border-bottom: 1px solid $lightGray;
+        padding-top: 20px;
+        margin-top: 20px;
+
+        .review-form-would-recommend-label {
+          font-weight: bold;
+          font-size: 14px;
+          padding-bottom: 20px;
+        }
 
         .recommend-buttons {
+          padding-bottom: 20px;
+
           button {
-            border: 1px solid blue;
+            border: 1px solid $lightGray;
+            border-radius: 10px;
+            height: 50px;
+            width: 150px;
+            text-align: center;
+            margin-right: 20px;
           }
 
           button:hover {
             cursor: pointer;
+            border: 1px solid $darkGray;
           }
 
-          button:checked {
-            background-color: $darkPink;
+          button:focus {
+            border: 1px solid $darkGray;            
           }
         }
       }
 
-      .add-review-button {
-        background-color: $pink;
-      }
+      .review-form-button-errors {
+        display: flex;
 
-      .add-review-button:hover {
-        cursor: pointer;
-        background-color: $darkPink;
+        .add-review-button {
+          background-color: $pink;
+          border-radius: 10px;
+          height: 50px;
+          width: 150px;
+          text-align: center;   
+          color: white;
+          margin-top: 20px;     
+        }
+  
+        .add-review-button:hover {
+          cursor: pointer;
+          background-color: $darkPink;
+        }
+
+        .review-form-errors {
+          display: flex;
+          flex-direction: column;
+          color: $darkPink;
+          margin: 10px 0 0 20px;
+        }
       }
     }
   }
