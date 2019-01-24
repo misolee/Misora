@@ -10,7 +10,9 @@ const mstp = (state, ownParams) => {
   let productId = ownParams.match.params.productId;
   let currentUserId = state.session.id;
   let basketItems = Object.values(state.entities.basketItems);
-  let reviews = Object.values(state.entities.reviews);
+  let reviews = Object.values(state.entities.reviews).sort( function(a,b) {
+      return new Date(b.updatedAt) - new Date(a.updatedAt);
+  });
   
   return({
     product: state.entities.products[productId],
