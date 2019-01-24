@@ -39,6 +39,6 @@ export const editReview = (review) => (dispatch) => (
 
 export const deleteReview = (id) => (dispatch) => (
   reviewUtils.deleteReview(id)
-  .then((reviewId) => dispatch(removeReview(reviewId)),
+  .then(() => dispatch(removeReview(id)),
   (errors) => dispatch(receiveReviewErrors(errors.responseJSON)))
 );
