@@ -31,10 +31,7 @@ class ReviewForm extends React.Component {
     let { errors, product, history } = this.props;
     return (e) => {
       e.preventDefault();
-      this.props.createReview(this.state);
-      if (!errors) {
-        history.push(`/products/${product.name}~${product.id}`);
-      }
+      this.props.createReview(this.state).then((review) => history.push(`/products/${product.name}~${product.id}`));
     };
   }
 
@@ -65,7 +62,7 @@ class ReviewForm extends React.Component {
             <img className="all-index-one-product-image" src={ product.photoUrls[0] } />
           </div>
           <div className="review-form-product-info">
-            {/* <Link> */}
+            <Link to={`/products/${ product.name }~${ product.id }`}>
               <div className="review-form-brand-product-name">
                 <div className="review-form-brand-label">
                   { brands[product.brandId].name }
@@ -74,17 +71,22 @@ class ReviewForm extends React.Component {
                   { product.name }
                 </div>
               </div>
-            {/* </Link> */}
+            </Link>
             <div className="review-form-rating">
               <div className="review-form-label-rate-product">
                 Rate this product
               </div>
               <div className="review-form-hearts">
-                <i id="rating-heart" className="fas fa-heart" onClick={ this.handleRatingClick(1) }></i>
-                <i id="rating-heart" className="fas fa-heart" onClick={ this.handleRatingClick(2) }></i>
-                <i id="rating-heart" className="fas fa-heart" onClick={ this.handleRatingClick(3) }></i>
-                <i id="rating-heart" className="fas fa-heart" onClick={ this.handleRatingClick(4) }></i>
-                <i id="rating-heart" className="fas fa-heart" onClick={ this.handleRatingClick(5) }></i>
+                <input name="rating-heart" id="rating-1" type="radio" onClick={ this.handleRatingClick(1) } />
+                  <label htmlFor="rating-1"><i id="rating-heart" className="fas fa-heart"></i></label>
+                <input name="rating-heart" id="rating-2" type="radio" onClick={ this.handleRatingClick(2) } />
+                  <label htmlFor="rating-2"><i id="rating-heart" className="fas fa-heart"></i></label>
+                <input name="rating-heart" id="rating-3" type="radio" onClick={ this.handleRatingClick(3) } />
+                  <label htmlFor="rating-3"><i id="rating-heart" className="fas fa-heart"></i></label>
+                <input name="rating-heart" id="rating-4" type="radio" onClick={ this.handleRatingClick(4) } />
+                  <label htmlFor="rating-4"><i id="rating-heart" className="fas fa-heart"></i></label>
+                <input name="rating-heart" id="rating-5" type="radio" onClick={ this.handleRatingClick(5) } />
+                  <label htmlFor="rating-5"><i id="rating-heart" className="fas fa-heart"></i></label>
               </div>
               <div className="review-form-review-label">
                 Review
@@ -105,8 +107,10 @@ class ReviewForm extends React.Component {
                   Would you recommend this product?
                 </div>
                 <div className="recommend-buttons">
-                  <button onClick={ this.handleRecommend("yes") }>Yes</button>
-                  <button onClick={ this.handleRecommend("no") }>No</button>
+                  <input name="recommendation" id="yesrecommend" type="radio" onClick={ this.handleRecommend("yes") } />
+                    <label htmlFor="yesrecommend">Yes</label>
+                  <input name="recommendation" id="norecommend" type="radio" onClick={ this.handleRecommend("no") } />
+                    <label htmlFor="norecommend">No</label>
                 </div>
               </div>
               <div className="review-form-button-errors">

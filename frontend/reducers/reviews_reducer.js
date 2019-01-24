@@ -1,5 +1,6 @@
 import { RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/review_actions';
 import { RECEIVE_ONE_PRODUCT } from '../actions/product_actions';
+import { merge } from 'lodash';
 
 export default (state = {}, action) => {
   Object.freeze(state);
@@ -10,7 +11,7 @@ export default (state = {}, action) => {
       return newState;
     case REMOVE_REVIEW:
       newState = merge({}, state);
-      delete newState[action.review.id];
+      delete newState[action.reviewId];
       return newState;
     case RECEIVE_ONE_PRODUCT:
       if (!action.product.reviews) return {};

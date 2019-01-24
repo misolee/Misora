@@ -152,7 +152,8 @@ class ProductShow extends React.Component {
 						Ratings & Reviews
 					</div>
 					<Link className="add-review-link" to={`/addReview/${product.id}`}>Add Review</Link>
-					<ReviewsIndex reviews={ reviews }/>
+					<ReviewsIndex reviews={ reviews } currentUserId={ currentUserId }
+						deleteReview= { this.props.deleteReview }/>
 				</div>
 			</div>
 		)

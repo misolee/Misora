@@ -12,6 +12,22 @@ class ReviewIndexItem extends React.Component {
     }
   }
 
+  showDeleteReview() {
+    let { currentUserId, review } = this.props;
+    if (currentUserId === review.userId) {
+      return <div onClick={ this.deleteReviewOnPage() } className="delete-review"><i className="fas fa-trash-alt"></i></div>
+    } else {
+      return <div></div>
+    }
+  }
+
+  deleteReviewOnPage() {
+    return (e) => {
+      e.preventDefault();
+      this.props.deleteReview(this.props.review.id);
+    };
+  }
+
   date() {
     let { updatedAt } = this.props.review;
     const monthNames = {
@@ -63,8 +79,9 @@ class ReviewIndexItem extends React.Component {
           <div>
             { reviews }
           </div>
-          <div className="">
+          <div className="recommend-delete-review">
             { this.recommend() }
+            { this.showDeleteReview() }
           </div>
         </div>
       </div>

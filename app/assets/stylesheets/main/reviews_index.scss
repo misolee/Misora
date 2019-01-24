@@ -73,5 +73,23 @@
         color: $darkPink;
       }
     }
+
+    .recommend-delete-review {
+      display: flex;
+      justify-content: space-between;
+
+      .delete-review {
+        margin-top: 20px;
+        
+        .fa-trash-alt {
+          color: $pink;
+        }
+  
+        .fa-trash-alt:hover {
+          cursor: pointer;
+          color: $darkPink;
+        }
+      }
+    }
   }
 }

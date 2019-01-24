@@ -54,6 +54,10 @@
           font-size: 14px;
         }
       }
+
+      .review-form-brand-product-name:hover {
+        text-decoration: underline;
+      }
     }
 
     .review-form-rating {
@@ -69,11 +73,16 @@
         padding-bottom: 20px;
         font-size: 25px;
 
-        #rating-heart {
+        input[type="radio"] {
+          display: none;
+        }
+
+        label {
           color: $pink;
         }
 
-        #rating-heart:active {
+        input[type="radio"]:checked + label {
+          cursor: default;
           color: $darkPink;
         }
 
@@ -121,7 +130,7 @@
         border: 1px solid $lightGray;
         width: 90%;
         border-radius: 8px;
-        height: 30px;
+        height: 40px;
         padding: 0 20px;
         font-size: 14px;
         color: $darkGray;
@@ -149,21 +158,25 @@
         .recommend-buttons {
           padding-bottom: 20px;
 
-          button {
-            border: 1px solid $lightGray;
-            border-radius: 10px;
-            height: 50px;
-            width: 150px;
-            text-align: center;
-            margin-right: 20px;
+          input[type="radio"] {
+            display: none;
           }
 
-          button:hover {
+          label {
+            padding: 15px 60px;
+            border-radius: 10px;
+            margin-right: 20px;
+            display: inline-block;
+            border: 1px solid $lightGray;
+          }
+
+          label:hover {
             cursor: pointer;
             border: 1px solid $darkGray;
           }
 
-          button:focus {
+          input[type="radio"]:checked + label {
+            cursor: default;
             border: 1px solid $darkGray;            
           }
         }
@@ -192,6 +205,7 @@
           flex-direction: column;
           color: $darkPink;
           margin: 10px 0 0 20px;
+          font-size: 13px;
         }
       }
     }
