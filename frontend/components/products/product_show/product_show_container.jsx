@@ -10,6 +10,7 @@ const mstp = (state, ownParams) => {
   let productId = ownParams.match.params.productId;
   let currentUserId = state.session.id;
   let basketItems = Object.values(state.entities.basketItems);
+  let reviews = Object.values(state.entities.reviews);
   
   return({
     product: state.entities.products[productId],
@@ -17,7 +18,8 @@ const mstp = (state, ownParams) => {
     errors: state.errors.basketItems,
     productId,
     currentUserId,
-    basketItems
+    basketItems,
+    reviews
   });
 };
 

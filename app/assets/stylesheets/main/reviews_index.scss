@@ -1,0 +1,23 @@
+.reviews {
+  display: flex;
+  flex-direction: column;
+  min-width: 1050px;
+  width: 70%;
+  margin: 0 auto;
+  color: $darkGray;
+  font-family: $Arimo;
+  letter-spacing: 0.5px;
+
+  .ratings-and-reviews {
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  .add-review-link {
+    color: $darkPink;
+  }
+
+  .add-review-link:hover {
+    text-decoration: underline;
+  }
+}

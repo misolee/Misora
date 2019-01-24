@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :products, only: [:index, :show]
     resources :brands, only: [:index, :show]
     resources :basket_items, only: [:index, :create, :update, :destroy]
+    resources :reviews, only: [:index, :create, :show, :update, :destroy]
     delete '/basket_items', to: 'basket_items#destroy_all'
   end
 

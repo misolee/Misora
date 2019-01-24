@@ -62,4 +62,6 @@ class User < ApplicationRecord
   end
 
   has_many :basket_items
+  
+  has_many :reviews
 end

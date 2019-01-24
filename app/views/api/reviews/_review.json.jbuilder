@@ -1,0 +1,10 @@
+json.extract! review, 
+  :id,
+  :user_id,
+  :product_id,
+  :color,
+  :rating,
+  :reviews,
+  :headline,
+  :recommend,
+  :updated_at

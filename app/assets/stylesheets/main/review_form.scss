@@ -1,0 +1,94 @@
+.review-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: $Arimo;
+  letter-spacing: 0.5px;
+  min-width: 1050px;
+  width: 70%;
+  margin: 0 auto;
+  color: $darkGray;
+  
+  .review-form-label {
+    font-weight: bold;
+  }
+
+  .review-form-label-title {
+    font-size: 30px;
+  }
+
+  .review-form-with-image {
+    display: flex;
+    text-align: left;
+
+    .review-form-product-image {
+      flex: 1;
+
+      img {
+        height: 300px;
+        width: 300px;
+      }
+    }
+
+    .review-form-product-info {
+      flex: 1;
+    }
+
+    .review-form-rating {
+
+      .review-form-hearts {
+        display: flex;
+
+        #rating-heart {
+          color: $pink;
+        }
+
+        #rating-heart:active {
+          color: $darkPink;
+        }
+
+        #rating-heart:hover {
+          cursor: pointer;
+          color: $darkPink;
+        }
+      }
+
+      .review-form-textarea {
+        border-radius: 10px;
+        resize: none;
+      }
+
+      .headline-input {
+        border: 1px solid red;
+      }
+
+      .recommendation {
+        display: flex;
+        flex-direction: column;
+
+        .recommend-buttons {
+          button {
+            border: 1px solid blue;
+          }
+
+          button:hover {
+            cursor: pointer;
+          }
+
+          button:checked {
+            background-color: $darkPink;
+          }
+        }
+      }
+
+      .add-review-button {
+        background-color: $pink;
+      }
+
+      .add-review-button:hover {
+        cursor: pointer;
+        background-color: $darkPink;
+      }
+    }
+  }
+}

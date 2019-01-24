@@ -12,10 +12,10 @@ const receiveAllBasketItems = (basketItems) => (
   })
 );
 
-const removeBasketItem = (basketItem) => (
+const removeBasketItem = (basketItemId) => (
   ({
     type: REMOVE_BASKET_ITEM,
-    basketItem
+    basketItemId
   })
 );
 
