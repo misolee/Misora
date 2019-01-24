@@ -53,6 +53,15 @@
       display: flex;
       justify-content: space-between;
       padding-bottom: 20px;
+
+      .heart-rating {
+        display: flex;
+        color: $darkPink;
+
+        .uncolored-heart {
+          color: rgb(253, 229, 232);
+        }
+      }
       
       .review-index-item-date {
         font-size: 13px;

@@ -53,7 +53,16 @@ class ReviewIndexItem extends React.Component {
   }
 
   render() {
-    let { headline, reviews } =  this.props.review;
+    let { headline, reviews, rating } =  this.props.review;
+
+    let heartRating = []
+    for (let i = 0; i < rating; i++) {
+      heartRating.push(<i className="fas fa-heart" />);
+    }
+    for (let i = 0; i < 5 - rating; i++) {
+      heartRating.push(<i className="fas fa-heart uncolored-heart" />);
+    }
+    let heart = heartRating.map((heart, i) => <div key={i}>{ heart }</div>)
 
     return (
       <div className="review-index-item">
@@ -63,11 +72,7 @@ class ReviewIndexItem extends React.Component {
         <div className="review-index-item-rating">
           <div className="rating-date">
             <div className="heart-rating">
-              <i className="fas fa-heart"></i>
-              <i className="fas fa-heart"></i>
-              <i className="fas fa-heart"></i>
-              <i className="fas fa-heart"></i>
-              <i className="fas fa-heart"></i>
+              { heart }
             </div>
             <div className="review-index-item-date">
               { this.date() }
