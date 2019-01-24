@@ -5,11 +5,15 @@ import { fetchBrand } from '../../../actions/brand_actions';
 import { createBasketItem, fetchBasketItems } from '../../../actions/basket_item_actions';
 import { clearErrors } from "../../../actions/session_actions";
 import { openModal } from "../../../actions/modal_actions";
+import { deleteReview } from "../../../actions/review_actions";
 
 const mstp = (state, ownParams) => {
   let productId = ownParams.match.params.productId;
   let currentUserId = state.session.id;
   let basketItems = Object.values(state.entities.basketItems);
+  let reviews = Object.values(state.entities.reviews).sort( function(a,b) {
+      return new Date(b.updatedAt) - new Date(a.updatedAt);
+  });
   
   return({
     product: state.entities.products[productId],
@@ -17,7 +21,8 @@ const mstp = (state, ownParams) => {
     errors: state.errors.basketItems,
     productId,
     currentUserId,
-    basketItems
+    basketItems,
+    reviews
   });
 };
 
@@ -28,7 +33,8 @@ const mdtp = (dispatch) => {
     createBasketItem: (basketItem) => dispatch(createBasketItem(basketItem)),
     fetchBasketItems: () => dispatch(fetchBasketItems()),
     clearErrors: () => dispatch(clearErrors()),
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal) => dispatch(openModal(modal)),
+    deleteReview: (reviewId) => dispatch(deleteReview(reviewId))
   });
 };
 

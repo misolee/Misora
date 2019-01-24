@@ -66,9 +66,7 @@ class AllProductIndex extends React.Component {
     })
 
     let categories = categoryArr.map((category) => 
-      // <Link to={`/products/${this.props.bigCategory}/${category}`}>
-        <div key={category} onClick={this.filter(category)} className="product-index-category">{ category }</div>
-      // </Link>
+      <div key={category} onClick={this.filter(category)} className="product-index-category">{ category }</div>
     )
     
     return (

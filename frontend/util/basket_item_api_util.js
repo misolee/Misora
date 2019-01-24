@@ -12,6 +12,7 @@ export const createBasketItem = (basket_item) => (
     data: { basket_item }
   })
 );
+
 export const updateBasketItem = (basket_item) => (
   $.ajax({
     method: 'PATCH',

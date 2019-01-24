@@ -1,0 +1,109 @@
+.reviews {
+  display: flex;
+  flex-direction: column;
+  min-width: 1050px;
+  width: 70%;
+  margin: 0 auto;
+  color: $darkGray;
+  font-family: $Arimo;
+  letter-spacing: 0.5px;
+  text-align: center;
+  border-top: 1px solid $lightGray;
+  
+  .ratings-and-reviews {
+    font-weight: bold;
+    font-size: 30px;
+    padding: 20px 0;
+  }
+
+  .add-review-link {
+    color: $darkPink;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $lightGray;
+  }
+
+  .add-review-link:hover {
+    text-decoration: underline;
+  }
+}
+
+.review-index-item {
+  display: flex;
+  border-bottom: 1px solid $lightGray;
+  padding: 20px 0;
+  text-align: start;
+
+  .review-index-item-user-profile {
+    flex: 1;
+    font-size: 70px;
+    align-self: center;
+    padding-left: 50px;
+
+    .fa-kiss-wink-heart {
+      color: $pink;
+    }
+  }
+
+  .review-index-item-rating {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+  
+    .rating-date {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 20px;
+
+      .heart-rating {
+        display: flex;
+        color: $darkPink;
+
+        .uncolored-heart {
+          color: rgb(253, 229, 232);
+        }
+      }
+      
+      .review-index-item-date {
+        font-size: 13px;
+        color: $lightGray;
+      }
+    }
+
+    .review-index-item-headline {
+      font-weight: bold;
+      padding-bottom: 20px;
+    }
+
+    .review-index-item-recommend {
+      margin-top: 20px;
+      font-size: 13px;
+
+      .fa-check {
+        color: $darkPink;
+      }
+    }
+
+    .recommend-delete-review {
+      display: flex;
+      justify-content: space-between;
+
+      .delete-review {
+        margin-top: 20px;
+        
+        .fa-trash-alt {
+          color: $pink;
+        }
+  
+        .fa-trash-alt:hover {
+          cursor: pointer;
+          color: $darkPink;
+        }
+      }
+    }
+  }
+}
+
+.be-the-first-one-to-review {
+  padding: 20px 0;
+  border-bottom: 1px solid $lightGray;
+}
