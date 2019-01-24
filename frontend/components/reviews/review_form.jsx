@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class ReviewForm extends React.Component {
     return (e) => {
       e.preventDefault();
       this.props.createReview(this.state);
+      this.props.history.push(`/products/${this.props.product.name}~${this.props.product.id}`);
     };
   }
 
