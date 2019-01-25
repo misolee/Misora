@@ -252,6 +252,22 @@
   margin-bottom: 50px;
 }
 
+.please-sign-in-to-add-review {
+  display: flex;
+  justify-content: center;
+
+  .sign-in-to-review {
+    color: $pink;
+    padding: 0 5px;
+  }
+
+  .sign-in-to-review:hover {
+    cursor: pointer;
+    color: $darkPink;
+    text-decoration: underline;
+  }
+}
+
 
 
 

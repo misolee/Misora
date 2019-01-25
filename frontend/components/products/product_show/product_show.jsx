@@ -69,6 +69,23 @@ class ProductShow extends React.Component {
 		}
 	}
 
+	showAddReview() {
+		let { product, currentUserId } = this.props;
+		if (!currentUserId) {
+			return (
+				<div className="please-sign-in-to-add-review">
+					Please
+					<div className="sign-in-to-review" onClick={() => this.props.openModal('login')}>
+						sign in
+					</div>
+					to add review
+				</div>
+			)
+		} else {
+			return <Link className="add-review-link" to={`/addReview/${product.id}`}>Add Review</Link>
+		}
+	}
+
   render() {
 		const { product, currentUserId, reviews } = this.props;
     let brand;
@@ -151,7 +168,8 @@ class ProductShow extends React.Component {
 					<div className="ratings-and-reviews">
 						Ratings & Reviews
 					</div>
-					<Link className="add-review-link" to={`/addReview/${product.id}`}>Add Review</Link>
+					{/* <Link className="add-review-link" to={`/addReview/${product.id}`}>Add Review</Link> */}
+					{ this.showAddReview() }
 					<ReviewsIndex reviews={ reviews } currentUserId={ currentUserId }
 						deleteReview= { this.props.deleteReview }/>
 				</div>
