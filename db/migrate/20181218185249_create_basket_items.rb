@@ -10,3 +10,4 @@ class CreateBasketItems < ActiveRecord::Migration[5.2]
     add_index :basket_items, [:user_id, :product_id], unique: true
   end
 end
+p

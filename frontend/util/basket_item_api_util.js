@@ -35,3 +35,9 @@ export const deleteAllBasketItems = (basket_items) => (
     data: { basket_items }
   })
 );
+
+// export const sendToInvoice = () => (
+//   $.ajax({
+
+//   })
+// );
