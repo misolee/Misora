@@ -21,7 +21,7 @@ export default (state = {}, action) => {
       return {};
     case REMOVE_BASKET_ITEM:
       newState = merge({}, state);
-      delete newState[action.basketItem.id];
+      delete newState[action.basketItemId.id];
       return newState;
     default:
       return state;
